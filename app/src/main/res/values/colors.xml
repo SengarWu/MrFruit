@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- base_color -->
+    <color name="base_color_red">#ff0000</color>
+    <color name="base_color_bg">#ffffff</color>
+    <color name="base_color_text_black">#000000</color>
+    <color name="base_color_text_gray">#eeeeee</color>
+    <color name="base_color_text_white">#ffffff</color>
+    <!-- transparent -->
+    <color name="color_transparent_bg">#00000000</color>
+    <color name="color_half_transparent">#30000000</color>
+    <color name="color_theme">#ffff7885</color>
+    <color name="color_transparent_theme">#7aff7885</color>
+    <color name="color_no_transparent_bg">#FFFFFFFF</color>
+
+    <color name="color_actionbar_background">#fcbc02</color>
+    <color name="color_actionbar_text">#FFFFFF</color>
+    <color name="color_text_black">#494747</color>
+    <color name="color_btn_yellow">#eefa02</color>
+    <color name="color_btn_brown">#fcbc02</color>
+    <color name="color_btn_red">#fd5b5b</color>
+
+</resources>
