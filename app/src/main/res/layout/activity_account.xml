@@ -74,7 +74,7 @@
                         android:layout_height="wrap_content"
                         android:text="姓名"
                         android:textSize="@dimen/textview_size"
-                        android:textColor="@color/viewColor"/>
+                        android:textColor="@color/color_text_black"/>
                     <LinearLayout
 
                         android:layout_width="match_parent"
@@ -105,7 +105,7 @@
                         android:layout_height="wrap_content"
                         android:text="电话"
                         android:textSize="@dimen/textview_size"
-                        android:textColor="@color/viewColor"/>
+                        android:textColor="@color/color_text_black"/>
                     <LinearLayout
 
                         android:layout_width="match_parent"
@@ -136,25 +136,25 @@
                         android:layout_height="wrap_content"
                         android:text="地址"
                         android:textSize="@dimen/textview_size"
-                        android:textColor="@color/viewColor"/>
+                        android:textColor="@color/color_text_black"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/textview_size"
-                        android:textColor="@color/viewColor"
+                        android:textColor="@color/color_text_black"
                         android:text="——"/>
                     <TextView
                         android:id="@+id/tv_account_school"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/textview_size"
-                        android:textColor="@color/viewColor"
+                        android:textColor="@color/color_text_black"
                         android:text="天津工业大学"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/textview_size"
-                        android:textColor="@color/viewColor"
+                        android:textColor="@color/color_text_black"
                         android:text="——"/>
                     <LinearLayout
 
@@ -239,7 +239,7 @@
                                     android:layout_marginTop="5dp"
                                     android:text="支付宝支付"
                                     android:textSize="@dimen/textview_size"
-                                    android:textColor="@color/viewColor"/>
+                                    android:textColor="@color/color_text_black"/>
 
                             </LinearLayout>
                         </LinearLayout>
@@ -268,7 +268,7 @@
                                     android:layout_marginTop="5dp"
                                     android:text="微信支付"
                                     android:textSize="@dimen/textview_size"
-                                    android:textColor="@color/viewColor"/>
+                                    android:textColor="@color/color_text_black"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -296,7 +296,7 @@
                                     android:layout_marginTop="5dp"
                                     android:text="货到付款"
                                     android:textSize="@dimen/textview_size"
-                                    android:textColor="@color/viewColor"/>
+                                    android:textColor="@color/color_text_black"/>
                             </LinearLayout>
                         </LinearLayout>
                     </RadioGroup>
