@@ -18,4 +18,13 @@ public class CartFragment extends BaseFragment {
         parentView = inflater.inflate(R.layout.fragment_cart, container, false);
         return parentView;
     }
+
+    public static CartFragment newInstance() {
+        
+        Bundle args = new Bundle();
+        
+        CartFragment fragment = new CartFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 }

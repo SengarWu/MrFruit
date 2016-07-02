@@ -8,6 +8,7 @@
     tools:context=".main.ui.MainActivity">
 
     <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="48dp">
@@ -24,21 +25,65 @@
 
         <LinearLayout
             android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="match_parent">
+
+        </LinearLayout>
+        <RadioButton
+            android:id="@+id/rb_cart"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:button="@null"
+            android:background="@drawable/selector_cart" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+        </LinearLayout>
+
+        <RadioButton
+            android:id="@+id/rb_main"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:checked="true"
+            android:button="@null"
+            android:background="@drawable/selector_main" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+        </LinearLayout>
+
+        <RadioButton
+            android:id="@+id/rb_me"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:button="@null"
+            android:background="@drawable/selector_me" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="match_parent">
+
+        </LinearLayout>
+
+        <!--<LinearLayout
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/rb_cart"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:button="@null"
-                android:background="@drawable/selector_cart" />
 
-        </LinearLayout>
 
-        <LinearLayout
+        </LinearLayout>-->
+
+        <!--<LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -67,7 +112,7 @@
                 android:button="@null"
                 android:background="@drawable/selector_me" />
 
-        </LinearLayout>
+        </LinearLayout>-->
 
     </RadioGroup>
 

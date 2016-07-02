@@ -20,8 +20,9 @@ public class MainFragment extends BaseFragment {
     }
 
     public static MainFragment newInstance() {
+        
         Bundle args = new Bundle();
-        args.putInt("key",0);
+        
         MainFragment fragment = new MainFragment();
         fragment.setArguments(args);
         return fragment;
