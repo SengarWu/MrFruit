@@ -7,7 +7,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/viewColor">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -23,6 +24,7 @@
                     android:layout_height="100dp"
                     android:background="@mipmap/mine_background">
                     <ImageView
+                        android:id="@+id/iv_mine_head"
                         android:layout_width="65dp"
                         android:layout_height="65dp"
                         android:src="@mipmap/touxiang"
@@ -39,12 +41,13 @@
                     android:background="#ffffff">
 
                     <TextView
+                        android:id="@+id/tv_mine_nickname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
                         android:textColor="@color/content"
-                        android:text="赵士诚"
+                        android:text="昵称"
                         android:textSize="@dimen/textview_size"/>
 
                     <View
@@ -68,7 +71,7 @@
                             android:gravity="center">
 
                             <ImageButton
-                                android:id="@+id/mine_list"
+                                android:id="@+id/ib_mine_list"
                                 android:layout_width="32dp"
                                 android:layout_height="32dp"
                                 android:background="@color/transpant"
@@ -91,7 +94,7 @@
                             android:layout_marginLeft="20dp">
 
                             <ImageButton
-                                android:id="@+id/mine_update"
+                                android:id="@+id/ib_mine_update"
                                 android:layout_width="32dp"
                                 android:layout_height="32dp"
                                 android:scaleType="fitCenter"
@@ -114,7 +117,7 @@
                             android:layout_marginLeft="20dp">
 
                             <ImageButton
-                                android:id="@+id/mine_delete"
+                                android:id="@+id/ib_mine_delete"
                                 android:layout_width="32dp"
                                 android:layout_height="32dp"
                                 android:scaleType="fitCenter"
@@ -137,7 +140,7 @@
                             android:layout_marginLeft="20dp">
 
                             <ImageButton
-                                android:id="@+id/mine_add"
+                                android:id="@+id/ib_mine_add"
                                 android:layout_width="32dp"
                                 android:layout_height="32dp"
                                 android:scaleType="fitCenter"
@@ -160,7 +163,7 @@
                             android:layout_marginLeft="20dp">
 
                             <ImageButton
-                                android:id="@+id/mine_fruit"
+                                android:id="@+id/ib_mine_fruit"
                                 android:layout_width="32dp"
                                 android:layout_height="32dp"
                                 android:scaleType="fitCenter"
@@ -201,7 +204,7 @@
                             android:layout_marginLeft="10dp"/>
 
                         <TextView
-                            android:id="@+id/tv_get"
+                            android:id="@+id/tv_mine_growth"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
@@ -210,9 +213,9 @@
                             android:text="12%"/>
 
                         <LinearLayout
-                            android:id="@+id/ll_get"
+                            android:id="@+id/ll_mine_orchard"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:gravity="right"
                             android:paddingRight="10dp">
 
@@ -227,6 +230,7 @@
                             <ImageView
                                 android:layout_width="16dp"
                                 android:layout_height="16dp"
+                                android:layout_gravity="center_vertical"
                                 android:src="@mipmap/more"/>
 
                         </LinearLayout>
@@ -261,18 +265,23 @@
                             android:layout_marginLeft="10dp"/>
 
                         <TextView
-                            android:id="@+id/tv_money"
+                            android:id="@+id/tv_get_coin"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:textSize="@dimen/textview_size"
                             android:textColor="@color/content"
-                            android:text="9枚"/>
-
-                        <LinearLayout
-                            android:id="@+id/ll_orchard"
-                            android:layout_width="match_parent"
+                            android:text="9"/>
+                        <TextView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textSize="@dimen/textview_size"
+                            android:textColor="@color/content"
+                            android:text="枚"/>
+                        <LinearLayout
+                            android:id="@+id/ll_mine_getcoin"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:gravity="right"
                             android:paddingRight="10dp">
 
@@ -287,6 +296,7 @@
                             <ImageView
                                 android:layout_width="16dp"
                                 android:layout_height="16dp"
+                                android:layout_gravity="center_vertical"
                                 android:src="@mipmap/more"/>
 
                         </LinearLayout>
@@ -328,9 +338,9 @@
 
 
                         <LinearLayout
-                            android:id="@+id/ll_address"
+                            android:id="@+id/ll_mine_personal"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:gravity="right"
                             android:paddingRight="10dp">
 
@@ -345,6 +355,7 @@
                             <ImageView
                                 android:layout_width="16dp"
                                 android:layout_height="16dp"
+                                android:layout_gravity="center_vertical"
                                 android:src="@mipmap/more"/>
 
                         </LinearLayout>
@@ -378,15 +389,16 @@
                             android:layout_marginLeft="10dp"/>
 
                         <LinearLayout
-                            android:id="@+id/ll_about"
+                            android:id="@+id/ll_mine_about"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:gravity="right"
                             android:paddingRight="10dp">
 
                             <ImageView
                                 android:layout_width="16dp"
                                 android:layout_height="16dp"
+                                android:layout_gravity="center_vertical"
                                 android:src="@mipmap/more"/>
 
                         </LinearLayout>
@@ -420,15 +432,16 @@
                             android:layout_marginLeft="10dp"/>
 
                         <LinearLayout
-                            android:id="@+id/ll_back"
+                            android:id="@+id/ll_mine_back"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:gravity="right"
                             android:paddingRight="10dp">
 
                             <ImageView
                                 android:layout_width="16dp"
                                 android:layout_height="16dp"
+                                android:layout_gravity="center_vertical"
                                 android:src="@mipmap/more"/>
 
                         </LinearLayout>
@@ -442,14 +455,15 @@
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="match_parent"
 
                         android:layout_gravity="center"
                         android:background="@color/viewColor">
                         <Button
-                            android:id="@+id/out"
+                            android:id="@+id/bt_mine_out"
                             android:layout_width="120dp"
                             android:layout_height="30dp"
+                            android:layout_marginTop="20dp"
                             android:background="@mipmap/button_style"
                             android:layout_centerInParent="true"
                             android:textColor="#FFFFFF"
