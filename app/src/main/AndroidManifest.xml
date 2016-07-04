@@ -16,15 +16,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main.ui.DiscoverActivity"></activity>
+        <activity android:name=".main.ui.DiscoverActivity" />
         <activity android:name=".me.ui.AccountActivity">
-            <!--<intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
-        <activity android:name=".me.ui.UpdatePersonalActivity"></activity>
+        <activity android:name=".me.ui.UpdatePersonalActivity" />
+        <activity android:name=".me.ui.MyOrderActivity" />
+        <activity android:name=".me.ui.MyGetCoinActivity">
+
+        </activity>
     </application>
 
 </manifest>

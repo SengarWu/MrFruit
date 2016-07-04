@@ -1,5 +1,6 @@
 package com.xpple.fruits.me.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,13 +28,20 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
     private TextView tv_get_coin;
     private LinearLayout ll_mine_orchard;
     private LinearLayout ll_mine_getcoin;
-    private LinearLayout ll_mine_address;
+    private LinearLayout ll_mine_personal;
     private LinearLayout ll_mine_about;
     private LinearLayout ll_mine_back;
     private Button bt_mine_out;
 
 
+    public static MeFragment newInstance() {
 
+        Bundle args = new Bundle();
+
+        MeFragment fragment = new MeFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -45,13 +53,32 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
     private void initView() {
         ib_mine_list = (ImageButton) parentView.findViewById(R.id.ib_mine_list);
         ib_mine_list.setOnClickListener(this);
+        ib_mine_update=(ImageButton) parentView.findViewById(R.id.ib_mine_update);
+        ib_mine_update.setOnClickListener(this);
+        ib_mine_delete=(ImageButton) parentView.findViewById(R.id.ib_mine_delete);
+        ib_mine_delete.setOnClickListener(this);
+        ib_mine_add=(ImageButton) parentView.findViewById(R.id.ib_mine_add);
+        ib_mine_add.setOnClickListener(this);
+        ib_mine_fruit=(ImageButton) parentView.findViewById(R.id.ib_mine_fruit);
+        ib_mine_fruit.setOnClickListener(this);
+        ll_mine_orchard=(LinearLayout) parentView.findViewById(R.id.ll_mine_orchard);
+        ll_mine_orchard.setOnClickListener(this);
+        ll_mine_getcoin=(LinearLayout) parentView.findViewById(R.id.ll_mine_getcoin);
+        ll_mine_getcoin.setOnClickListener(this);
+        ll_mine_personal=(LinearLayout) parentView.findViewById(R.id.ll_mine_personal);
+        ll_mine_personal.setOnClickListener(this);
+        ll_mine_about=(LinearLayout) parentView.findViewById(R.id.ll_mine_about);
+        ll_mine_about.setOnClickListener(this);
+        ll_mine_back=(LinearLayout) parentView.findViewById(R.id.ll_mine_back);
+        ll_mine_back.setOnClickListener(this);
+        bt_mine_out=(Button) parentView.findViewById(R.id.bt_mine_out);
+        bt_mine_out.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId())
         {
-
             case R.id.ib_mine_list://我的订单
 
                 break;
@@ -74,7 +101,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
 
                 break;
             case R.id.ll_mine_getcoin://充值
-
+                startActivity(new Intent(mActivity,AccountActivity.class));
                 break;
             case R.id.ll_mine_personal://修改信息
 
