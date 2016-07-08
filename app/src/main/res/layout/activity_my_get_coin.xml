@@ -199,7 +199,7 @@
                                 android:layout_marginTop="5dp"
                                 android:text="支付宝支付"
                                 android:textSize="@dimen/textview_size"
-                                android:textColor="@color/viewColor"/>
+                                android:textColor="@color/color_text_black"/>
 
                         </LinearLayout>
                     </LinearLayout>
@@ -228,7 +228,7 @@
                                 android:layout_marginTop="5dp"
                                 android:text="微信支付"
                                 android:textSize="@dimen/textview_size"
-                                android:textColor="@color/viewColor"/>
+                                android:textColor="@color/color_text_black"/>
                         </LinearLayout>
                     </LinearLayout>
                 </RadioGroup>

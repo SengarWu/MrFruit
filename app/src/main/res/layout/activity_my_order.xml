@@ -5,5 +5,5 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.xpple.fruits.me.ui.MyOrderActivity">
-   <include layout="@layout/actionbar"/>
+
 </LinearLayout>
