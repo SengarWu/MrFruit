@@ -101,10 +101,10 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
 
                 break;
             case R.id.ll_mine_getcoin://充值
-                startActivity(new Intent(mActivity,AccountActivity.class));
+                startActivity(new Intent(mActivity,MyGetCoinActivity.class));
                 break;
             case R.id.ll_mine_personal://修改信息
-
+                startActivity(new Intent(mActivity,UpdatePersonalActivity.class));
                 break;
             case R.id.ll_mine_about://关于我们
 
