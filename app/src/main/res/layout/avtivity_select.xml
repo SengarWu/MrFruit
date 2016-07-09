@@ -10,8 +10,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:layout_alignParentBottom="true"
-        android:background="">
+        android:layout_alignParentBottom="true">
 
     </LinearLayout>
 </RelativeLayout>
