@@ -1,5 +1,6 @@
 package com.xpple.fruits.me.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -56,6 +57,7 @@ public class UpdatePersonalActivity extends BaseActivity implements View.OnClick
             case R.id.rl_update_person_head://点击修改头像一栏
                 break;
             case R.id.rl_update_person_nickname://点击昵称一栏
+                startActivity(new Intent(UpdatePersonalActivity.this,UpdateNicknameActivity.class));
                 break;
             case R.id.rl_update_person_address://点击收货信息一栏
                 break;

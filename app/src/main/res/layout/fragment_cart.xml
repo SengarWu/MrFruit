@@ -17,7 +17,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="购物车"
-                android:textSize="18sp"
+                android:textSize="@dimen/textSize_actionbar"
                 android:textColor="@color/color_actionbar_text"
                 android:gravity="center"/>
         </RelativeLayout>

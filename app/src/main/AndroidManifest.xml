@@ -29,9 +29,8 @@
         </activity>
         <activity android:name=".me.ui.UpdatePersonalActivity" />
         <activity android:name=".me.ui.MyOrderActivity" />
-        <activity android:name=".me.ui.MyGetCoinActivity">
-
-        </activity>
+        <activity android:name=".me.ui.MyGetCoinActivity"></activity>
+        <activity android:name=".me.ui.UpdateNicknameActivity"></activity>
     </application>
 
 </manifest>
