@@ -29,8 +29,13 @@
         </activity>
         <activity android:name=".me.ui.UpdatePersonalActivity" />
         <activity android:name=".me.ui.MyOrderActivity" />
-        <activity android:name=".me.ui.MyGetCoinActivity"></activity>
-        <activity android:name=".me.ui.UpdateNicknameActivity"></activity>
+        <activity android:name=".me.ui.MyGetCoinActivity" />
+        <activity android:name=".me.ui.UpdateNicknameActivity" />
+        <activity android:name=".me.ui.AddressActivity" />
+        <activity android:name=".me.ui.UpdatePasswordActivity" />
+        <activity android:name=".me.ui.LoginActivity" />
+        <activity android:name=".me.ui.Register1Activity" />
+        <activity android:name=".me.ui.Register2Activity"></activity>
     </application>
 
 </manifest>

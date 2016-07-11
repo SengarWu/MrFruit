@@ -60,8 +60,10 @@ public class UpdatePersonalActivity extends BaseActivity implements View.OnClick
                 startActivity(new Intent(UpdatePersonalActivity.this,UpdateNicknameActivity.class));
                 break;
             case R.id.rl_update_person_address://点击收货信息一栏
+                startActivity(new Intent(UpdatePersonalActivity.this,AddressActivity.class));
                 break;
             case R.id.rl_update_person_password://点击修改密码一栏
+                startActivity(new Intent(UpdatePersonalActivity.this,UpdatePasswordActivity.class));
                 break;
         }
     }

@@ -113,7 +113,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
 
                 break;
             case R.id.bt_mine_out://退出帐号
-
+                startActivity(new Intent(mActivity,LoginActivity.class));
                 break;
         }
     }
