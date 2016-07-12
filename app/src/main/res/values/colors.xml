@@ -29,4 +29,5 @@
     <color name="viewColor2">#595959</color>
     <color name="account_pay">#f84412</color>
     <color name="seed_detail_back">#f9ea77</color>
+    <color name="seed_detail_other">#f9f9f9</color>
 </resources>

@@ -3,25 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/viewColor"
+    android:background="@color/seed_detail_other"
     android:orientation="vertical"
     tools:context="com.xpple.fruits.me.ui.SeedDetailActivity">
     <include layout="@layout/actionbar"/>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:fillViewport="true">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
-
             <LinearLayout
+                android:id="@+id/ll_seed_detail_fruit"
                 android:layout_width="match_parent"
-                android:layout_height="10dp"
+                android:layout_height="180dp"
                 android:gravity="bottom"
-                android:orientation="vertical"
-                android:layout_weight="1">
+                android:orientation="vertical">
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="44dp"
@@ -29,18 +28,18 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:orientation="vertical"
-                android:layout_weight="2">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="10dp"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center"
+                    android:background="@color/seed_detail_other"
                     android:paddingLeft="20dp"
-                    android:paddingRight="40dp"
-                    android:layout_weight="1">
+                    android:paddingRight="25dp">
                     <ImageView
+                        android:id="@+id/iv_seed_detail_head"
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:background="@mipmap/fruit_detail_seed"/>
@@ -52,11 +51,13 @@
                         android:layout_height="wrap_content"
                         android:background="@color/seed_detail_back">
                         <TextView
+                            android:id="@+id/tv_seed_detail_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/color_text_black"
                             android:text="苹果宝宝"/>
                         <TextView
+                            android:id="@+id/tv_seed_detail_inform"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="乐观开朗,与伙伴组建水果君团队！立志于..."/>
@@ -68,8 +69,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/color_text_black"
-                                android:text="解锁条件："/>
+                                android:text="解锁条件:"/>
                             <TextView
+                                android:id="@+id/tv_seed_detail_condition"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/color_text_black"
@@ -79,11 +81,11 @@
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="10dp"
+                    android:layout_height="120dp"
                     android:layout_marginTop="5dp"
+                    android:background="@color/seed_detail_other"
                     android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:layout_weight="1">
+                    android:paddingRight="20dp">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -127,6 +129,7 @@
                                 android:orientation="horizontal"
                                 android:layout_height="match_parent">
                                 <TextView
+                                    android:id="@+id/tv_seed_detail_money"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="1"/>
@@ -141,12 +144,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
                             android:orientation="horizontal"
-                            android:paddingLeft="40dp"
+                            android:paddingTop="5dp"
+                            android:paddingLeft="20dp"
                             android:paddingRight="20dp"
                             android:layout_weight="1">
                             <LinearLayout
                                 android:layout_width="10dp"
-                                android:layout_weight="1"
+                                android:layout_weight="2"
                                 android:gravity="center"
                                 android:layout_height="match_parent">
                                 <TextView
@@ -167,10 +171,12 @@
                                 android:orientation="vertical"
                                 android:layout_height="match_parent">
                                 <TextView
+                                    android:id="@+id/tv_seed_detail_value"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="成长值约200"/>
                                 <TextView
+                                    android:id="@+id/tv_seed_detail_days"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="约2天"/>
@@ -187,13 +193,11 @@
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="10dp"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:paddingTop="40dp"
-                    android:paddingRight="20dp"
-                    android:paddingLeft="20dp"
-                    android:background="@mipmap/fruit_detail_inform"
-                    android:layout_weight="2">
+                    android:layout_marginTop="20dp"
+                    android:padding="20dp"
+                    android:background="@mipmap/fruit_detail_inform">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -205,6 +209,7 @@
                             android:textColor="@color/color_text_black"
                             android:text="成熟兑换："/>
                         <TextView
+                            android:id="@+id/tv_seed_detail_fruit"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="@dimen/textSize_money"
@@ -223,6 +228,7 @@
                             android:textColor="@color/color_text_black"
                             android:text="单价："/>
                         <TextView
+                            android:id="@+id/tv_seed_detail_price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="@dimen/textSize_money"
@@ -235,6 +241,7 @@
                             android:textColor="@color/color_text_black"
                             android:text="元/个("/>
                         <TextView
+                            android:id="@+id/tv_seed_detail_get_price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="@dimen/textSize_money"
@@ -245,20 +252,20 @@
                             android:layout_height="wrap_content"
                             android:textSize="@dimen/textSize_money"
                             android:textColor="@color/color_text_black"
-                            android:text="Get币"/>
+                            android:text="Get币)"/>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="48dp"
                             android:gravity="right">
                             <ImageButton
-                                android:id="@+id/ib_getcoin_sub"
+                                android:id="@+id/ib_seed_detail_sub"
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:layout_marginRight="10dp"
                                 android:layout_gravity="center_vertical"
                                 android:background="@mipmap/payinget_jian"/>
                             <TextView
-                                android:id="@+id/tv_num"
+                                android:id="@+id/tv_seed_detail_num"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="@dimen/textview_size"
@@ -268,7 +275,7 @@
                                 android:layout_gravity="center_vertical"/>
 
                             <ImageButton
-                                android:id="@+id/ib_getcoin_add"
+                                android:id="@+id/ib_seed_detail_add"
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:layout_gravity="center_vertical"
@@ -277,12 +284,12 @@
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:gravity="center">
                         <Button
-                            android:id="@+id/bt_fruit_detail_confirm"
+                            android:id="@+id/bt_seed_detail_confirm"
                             android:layout_width="match_parent"
-                            android:layout_height="50dp"
+                            android:layout_height="48dp"
                             android:layout_marginLeft="60dp"
                             android:layout_marginRight="60dp"
                             android:background="@drawable/btn_brown_big_style"
@@ -293,9 +300,10 @@
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-
         </LinearLayout>
-
     </ScrollView>
+
+
+
 
 </LinearLayout>
