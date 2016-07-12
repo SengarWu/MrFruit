@@ -91,7 +91,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
                 break;
 
             case R.id.ib_mine_add://邀请好友
-
+                startActivity(new Intent(mActivity,InviteFriendActivity.class));
                 break;
 
             case R.id.ib_mine_fruit://收获水果

@@ -10,7 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".main.ui.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".main.ui.DiscoverActivity" />
         <activity android:name=".me.ui.AccountActivity">
@@ -33,11 +37,10 @@
         <activity android:name=".me.ui.Register1Activity" />
         <activity android:name=".me.ui.Register2Activity" />
         <activity android:name=".me.ui.SeedDetailActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        </activity>
+        <activity android:name=".me.ui.InviteFriendActivity">
+
         </activity>
     </application>
 
