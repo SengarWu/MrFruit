@@ -37,6 +37,9 @@ public class Register2Activity extends BaseActivity implements View.OnClickListe
         tv_title.setText("注册");
         bt_register2_confirm=$(R.id.bt_register2_confirm);
         bt_register2_confirm.setOnClickListener(this);
+        et_register2_password=$(R.id.et_register2_password);
+        et_register2_confirm_password=$(R.id.et_register2_confirm_password);
+        et_register2_invite_code=$(R.id.et_register2_invite_code);
     }
 
     @Override

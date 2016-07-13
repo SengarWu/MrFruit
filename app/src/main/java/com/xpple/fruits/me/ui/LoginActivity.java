@@ -34,6 +34,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         bt_login_account.setOnClickListener(this);
         tv_login_update_password=$(R.id.tv_login_update_password);
         tv_login_update_password.setOnClickListener(this);
+        et_login_tel=$(R.id.et_login_tel);
+        et_login_password=$(R.id.et_login_password);
     }
 
     @Override

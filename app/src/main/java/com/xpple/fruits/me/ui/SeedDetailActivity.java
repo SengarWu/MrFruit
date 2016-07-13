@@ -52,6 +52,18 @@ public class SeedDetailActivity extends BaseActivity implements View.OnClickList
         ib_seed_detail_add.setOnClickListener(this);
         bt_seed_detail_confirm=$(R.id.bt_seed_detail_confirm);
         bt_seed_detail_confirm.setOnClickListener(this);
+        ll_seed_detail_fruit=$(R.id.ll_seed_detail_fruit);
+        iv_seed_detail_head=$(R.id.iv_seed_detail_head);
+        tv_seed_detail_name=$(R.id.tv_seed_detail_name);
+        tv_seed_detail_inform=$(R.id.tv_seed_detail_inform);
+        tv_seed_detail_condition=$(R.id.tv_seed_detail_condition);
+        tv_seed_detail_value=$(R.id.tv_seed_detail_value);
+        tv_seed_detail_days=$(R.id.tv_seed_detail_days);
+        tv_seed_detail_money=$(R.id.tv_seed_detail_money);
+        tv_seed_detail_fruit=$(R.id.tv_seed_detail_fruit);
+        tv_seed_detail_price=$(R.id.tv_seed_detail_price);
+        tv_seed_detail_get_price=$(R.id.tv_seed_detail_get_price);
+        tv_seed_detail_num=$(R.id.tv_seed_detail_num);
     }
 
     @Override

@@ -16,16 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".main.ui.DiscoverActivity" />
         <activity android:name=".me.ui.AccountActivity">
 
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
         </activity>
         <activity android:name=".me.ui.UpdatePersonalActivity" />
         <activity android:name=".me.ui.MyOrderActivity" />
@@ -36,10 +30,10 @@
         <activity android:name=".me.ui.LoginActivity" />
         <activity android:name=".me.ui.Register1Activity" />
         <activity android:name=".me.ui.Register2Activity" />
-        <activity android:name=".me.ui.SeedDetailActivity">
-
-        </activity>
-        <activity android:name=".me.ui.InviteFriendActivity">
+        <activity android:name=".me.ui.SeedDetailActivity" />
+        <activity android:name=".me.ui.InviteFriendActivity" />
+        <activity android:name=".me.ui.AddOtherActivity" />
+        <activity android:name=".me.ui.BuySeedActivity">
 
         </activity>
     </application>

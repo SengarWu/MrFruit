@@ -1,5 +1,6 @@
 package com.xpple.fruits.me.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -9,18 +10,20 @@ import android.widget.TextView;
 import com.xpple.fruits.R;
 import com.xpple.fruits.base.BaseActivity;
 
-public class UpdateNicknameActivity extends BaseActivity implements View.OnClickListener {
+public class AddOtherActivity extends BaseActivity implements View.OnClickListener {
+    private EditText et_add_other_content;
+    private TextView tv_add_other_finish;
     private ImageButton ib_back;
-    private EditText et_update_nickname;
-    private TextView tv_update_nickname_finish;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_nickname);
+        setContentView(R.layout.activity_add_other);
         initView();
     }
 
     private void initView() {
+        tv_add_other_finish=$(R.id.tv_add_other_finish);
+        tv_add_other_finish.setOnClickListener(this);
         ib_back = $(R.id.ib_back);
         ib_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,16 +31,14 @@ public class UpdateNicknameActivity extends BaseActivity implements View.OnClick
                 finish();
             }
         });
-        et_update_nickname=$(R.id.et_update_nickname);
-        et_update_nickname.setOnClickListener(this);
-        tv_update_nickname_finish=$(R.id.tv_update_nickname_finish);
+        et_add_other_content=$(R.id.et_add_other_content);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.et_update_nickname://修改昵称后点击完成
-
+            case R.id.tv_add_other_finish://点击完成
+                startActivity(new Intent(AddOtherActivity.this,AccountActivity.class));
                 break;
         }
     }

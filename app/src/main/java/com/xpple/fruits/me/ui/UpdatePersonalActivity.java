@@ -48,6 +48,10 @@ public class UpdatePersonalActivity extends BaseActivity implements View.OnClick
         rl_update_person_address.setOnClickListener(this);
         rl_update_person_password=$(R.id.rl_update_person_password);
         rl_update_person_password.setOnClickListener(this);
+        iv_update_person_head=$(R.id.iv_update_person_head);
+        tv_update_person_account=$(R.id.tv_update_person_account);
+        tv_update_person_nickname=$(R.id.tv_update_person_nickname);
+        tv_update_person_address=$(R.id.tv_update_person_address);
     }
 
     @Override

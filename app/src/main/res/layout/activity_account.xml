@@ -66,7 +66,10 @@
                         </LinearLayout>
 
                     </LinearLayout>
-
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/viewColor"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
@@ -97,7 +100,10 @@
 
                         </LinearLayout>
                     </LinearLayout>
-
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/viewColor"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
@@ -128,7 +134,10 @@
 
                         </LinearLayout>
                     </LinearLayout>
-
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/viewColor"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
@@ -205,12 +214,16 @@
                             android:layout_marginLeft="10dp"/>
 
                     </LinearLayout>
-
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/viewColor"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:paddingRight="15dp"
                         android:paddingLeft="15dp"
+                        android:layout_marginTop="10dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
                         <RadioGroup
@@ -331,17 +344,62 @@
                             android:textColor="@color/content"
                             android:layout_marginLeft="10dp"/>
                     </LinearLayout>
-
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/viewColor"/>
                     <ListView
                         android:id="@+id/lv_list"
+                        android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="110dp">
 
                     </ListView>
 
                 </LinearLayout>
-
-
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:background="@color/account"
+                    android:gravity="center_vertical"
+                    android:paddingRight="15dp"
+                    android:paddingLeft="15dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/content_titlesize"
+                        android:text="备注："/>
+                    <TextView
+                        android:id="@+id/tv_account_other"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/textview_size"
+                        android:textColor="@color/account_other"
+                        android:text="西瓜切成八块..."/>
+                    <LinearLayout
+                        android:id="@+id/ll_account_other"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="right|center_vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/textview_size"
+                            android:layout_marginRight="10dp"
+                            android:textColor="@color/account_other"
+                            android:text="可输入西瓜切块等要求"/>
+                        <ImageButton
+                            android:layout_width="13dp"
+                            android:layout_height="21dp"
+                            android:background="@mipmap/account_more"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/viewColor"/>
         </LinearLayout>
     </ScrollView>
     <LinearLayout

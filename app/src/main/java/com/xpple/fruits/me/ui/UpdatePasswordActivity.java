@@ -41,6 +41,10 @@ public class UpdatePasswordActivity extends BaseActivity implements View.OnClick
         bt_update_password_getcode.setOnClickListener(this);
         bt_update_password_confirm=$(R.id.bt_update_password_confirm);
         bt_update_password_confirm.setOnClickListener(this);
+        et_update_password_name=$(R.id.et_update_password_name);
+        et_update_password_invite=$(R.id.et_update_password_invite);
+        et_update_password_newpassword=$(R.id.et_update_password_newpassword);
+        et_update_password_confirm=$(R.id.et_update_password_confirm);
 
     }
 

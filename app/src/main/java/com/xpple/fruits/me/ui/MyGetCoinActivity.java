@@ -43,6 +43,7 @@ public class MyGetCoinActivity extends BaseActivity implements View.OnClickListe
         account_zhifubao.setOnClickListener(this);
         account_wechat=$(R.id.account_wechat);
         account_wechat.setOnClickListener(this);
+        tv_getcoin_price=$(R.id.tv_getcoin_price);
     }
 
     @Override

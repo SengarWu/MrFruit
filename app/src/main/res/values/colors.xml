@@ -22,6 +22,7 @@
 
     <!--tian-->
     <color name="viewColor">#f1f0f0</color>
+    <color name="account_other">#b9b7b7</color>
     <color name="transpant">#00ffffff</color>
     <color name="content">#000000</color>
     <color name="account">#ffffff</color>

@@ -73,6 +73,10 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
         ll_mine_back.setOnClickListener(this);
         bt_mine_out=(Button) parentView.findViewById(R.id.bt_mine_out);
         bt_mine_out.setOnClickListener(this);
+        iv_mine_head=(ImageView) parentView.findViewById(R.id.iv_mine_head);
+        tv_mine_nickname=(TextView) parentView.findViewById(R.id.tv_mine_nickname);
+        tv_mine_growth=(TextView) parentView.findViewById(R.id.tv_mine_growth);
+        tv_get_coin=(TextView) parentView.findViewById(R.id.tv_get_coin);
     }
 
     @Override

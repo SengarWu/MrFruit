@@ -40,6 +40,9 @@ public class Register1Activity extends BaseActivity implements View.OnClickListe
         bt_register1_getcode.setOnClickListener(this);
         bt_register1_confirm=$(R.id.bt_register1_confirm);
         bt_register1_confirm.setOnClickListener(this);
+        et_register1_name=$(R.id.et_register1_name);
+        et_register1_tel=$(R.id.et_register1_tel);
+        et_register1_password=$(R.id.et_register1_password);
 
     }
 

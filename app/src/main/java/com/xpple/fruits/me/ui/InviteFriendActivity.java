@@ -36,6 +36,7 @@ public class InviteFriendActivity extends BaseActivity implements View.OnClickLi
         bt_invite_friend_copy_code.setOnClickListener(this);
         tv_invite_friend_share=$(R.id.tv_invite_friend_share);
         tv_invite_friend_share.setOnClickListener(this);
+        tv_invite_friend_code=$(R.id.tv_invite_friend_code);
     }
 
     @Override

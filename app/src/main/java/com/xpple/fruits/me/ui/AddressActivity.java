@@ -1,5 +1,6 @@
 package com.xpple.fruits.me.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -41,13 +42,17 @@ public class AddressActivity extends BaseActivity implements View.OnClickListene
         bt_address_out.setOnClickListener(this);
         iv_address_more=$(R.id.iv_address_more);
         iv_address_more.setOnClickListener(this);
+        et_address_name=$(R.id.et_address_name);
+        et_address_tel=$(R.id.et_address_tel);
+        et_address_home=$(R.id.et_address_home);
+        et_address_detail=$(R.id.et_address_detail);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bt_address_out://点击确认按钮
-
+                startActivity(new Intent(AddressActivity.this,AccountActivity.class));
                 break;
             case R.id.iv_address_more://点击地址栏下拉按钮
 
