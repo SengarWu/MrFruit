@@ -4,7 +4,7 @@
     <color name="base_color_red">#ff0000</color>
     <color name="base_color_bg">#ffffff</color>
     <color name="base_color_text_black">#000000</color>
-    <color name="base_color_text_gray">#eeeeee</color>
+    <color name="base_color_text_gray">#999999</color>
     <color name="base_color_text_white">#ffffff</color>
     <!-- transparent -->
     <color name="color_transparent_bg">#00000000</color>
