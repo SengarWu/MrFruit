@@ -16,11 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".main.ui.DiscoverActivity" />
-        <activity android:name=".me.ui.AccountActivity">
-
-        </activity>
+        <activity android:name=".me.ui.AccountActivity"></activity>
         <activity android:name=".me.ui.UpdatePersonalActivity" />
         <activity android:name=".me.ui.MyOrderActivity" />
         <activity android:name=".me.ui.MyGetCoinActivity" />
@@ -33,9 +30,8 @@
         <activity android:name=".me.ui.SeedDetailActivity" />
         <activity android:name=".me.ui.InviteFriendActivity" />
         <activity android:name=".me.ui.AddOtherActivity" />
-        <activity android:name=".me.ui.BuySeedActivity">
-
-        </activity>
+        <activity android:name=".me.ui.BuySeedActivity"></activity>
+        <activity android:name=".shop.ui.ShoppingActivity"></activity>
     </application>
 
 </manifest>

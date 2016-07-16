@@ -80,6 +80,7 @@
                     android:text="￥"/>
 
                 <TextView
+                    android:id="@+id/tv_cart_total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/content_titlesize"
@@ -93,6 +94,7 @@
                     android:layout_marginLeft="15dp">
 
                     <Button
+                        android:id="@+id/btn_del"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -102,6 +104,7 @@
                         android:background="@color/color_btn_yellow"/>
 
                     <Button
+                        android:id="@+id/btn_settle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
