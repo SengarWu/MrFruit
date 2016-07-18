@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@android:id/background">
+
+        <shape>
+
+            <corners android:topRightRadius="20dp"
+                android:bottomRightRadius="20dp" />
+
+<!--
+            gradient定义该形状里面为渐变色填充，startColor起始颜色，
+            endColor结束颜色，angle表示方向角度。
+            当angle=0时，渐变色是从左向右。 然后逆时针方向转，
+            当angle=90时为从下往上。
+-->
+            <solid android:color="#bebebe"/>
+            <stroke
+                android:color="@color/base_color_text_white"
+                android:width="2dp"/>
+        </shape>
+    </item>
+
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <corners android:topRightRadius="20dp"
+                    android:bottomRightRadius="20dp"/>
+                <solid android:color="#00fdf0"/>
+                <stroke
+                    android:color="@color/base_color_text_white"
+                    android:width="3dp"/>
+            </shape>
+        </clip>
+    </item>
+
+</layer-list>

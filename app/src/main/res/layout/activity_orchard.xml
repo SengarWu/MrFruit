@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android_custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    tools:context="com.xpple.fruits.orchard.ui.OrchardActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/orchard_top"
+        android:layout_marginTop="80dp"
+        android:paddingTop="5dp">
+
+        <ImageButton
+            android:id="@+id/ib_back"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/icon_back_white"
+            android:scaleType="center"
+            android:background="@color/color_transparent_bg"/>
+
+        <LinearLayout
+            android:id="@+id/ll_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ib_back"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <com.xpple.fruits.view.RoundProgressBar
+                    android:id="@+id/mcp_history"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@mipmap/orchard_progress_banana"
+                    android_custom:roundColor="@color/base_color_text_white"
+                    android_custom:roundProgressColor="@color/progress_color"
+                    android_custom:textColor="@color/base_color_text_white"
+                    android_custom:roundWidth="4dip"
+                    android_custom:textSize="20sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/base_color_text_white"
+                    android:textSize="12sp"
+                    android:text="总成长"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ProgressBar
+                    android:id="@+id/pb_today"
+                    android:layout_width="80dp"
+                    android:layout_height="15dp"
+                    android:max="100"
+                    android:progress="50"
+                    android:progressDrawable="@drawable/progressbar"
+                    style="@android:style/Widget.ProgressBar.Horizontal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/base_color_text_white"
+                    android:textSize="12sp"
+                    android:text="今日成长"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_add_gold"
+            android:layout_width="80dp"
+            android:layout_height="27dp"
+            android:layout_toRightOf="@+id/ll_top"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="5dp"
+            android:textSize="12sp"
+            android:gravity="center_vertical|right"
+            android:paddingRight="20dp"
+            android:text="99999"
+            android:background="@mipmap/orchard_add_coin" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/btn_add_gold">
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/transpant"
+                android:src="@mipmap/orchard_message"
+                android:scaleType="centerCrop" />
+
+            <ImageButton
+                android:layout_width="35dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/transpant"
+                android:src="@mipmap/orchard_task"
+                android:scaleType="centerCrop" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_orchard_grade"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@mipmap/orchard_pen_grade"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:textColor="@color/base_color_text_white"
+            android:text="1"/>
+
+        <ImageButton
+            android:id="@+id/ib_orchard_share"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_toLeftOf="@+id/tv_orchard_grade"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/transpant"
+            android:src="@mipmap/orchard_share"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/tv_orchard_grade"
+            android:layout_below="@+id/ib_orchard_share"
+            android:layout_marginTop="10dp"
+            android:background="@color/transpant"
+            android:src="@mipmap/orchard_share"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/transpant"
+            android:layout_below="@+id/tv_orchard_grade"
+            android:src="@mipmap/orchard_friend"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true">
+
+            <ImageView
+                android:id="@+id/iv_seeds_baby"
+                android:layout_above="@+id/iv_pen"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="20dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/orchard_baby_apple"/>
+
+            <ImageView
+                android:id="@+id/iv_pen"
+                android:layout_width="80dp"
+                android:layout_height="76dp"
+                android:layout_marginLeft="10dp"
+                android:background="@mipmap/orchard_icon_pen"
+                android:layout_alignParentBottom="true" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="right|center_vertical"
+        android:orientation="horizontal"
+        android:background="@mipmap/orchard_bottom"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/btn_shop"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@mipmap/orchard_icon_shop"
+            android:layout_marginRight="15dp" />
+
+        <Button
+            android:id="@+id/btn_fat"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@mipmap/orchard_icon_fat"
+            android:layout_marginRight="15dp"/>
+
+        <Button
+            android:id="@+id/btn_sun"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@mipmap/orchard_icon_sun"
+            android:layout_marginRight="15dp"/>
+
+        <Button
+            android:id="@+id/btn_water"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/orchard_icon_water" />
+
+    </LinearLayout>
+
+</LinearLayout>

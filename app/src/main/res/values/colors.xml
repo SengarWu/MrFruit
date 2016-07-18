@@ -21,6 +21,7 @@
     <color name="color_btn_red">#fd5b5b</color>
     <color name="color_text_brown">#FFCC00</color>
     <color name="color_text_blue">#0099CC</color>
+    <color name="progress_color">#00fdf0</color>
 
     <!--tian-->
     <color name="viewColor">#f1f0f0</color>
