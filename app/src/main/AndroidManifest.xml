@@ -34,7 +34,7 @@
         <activity android:name=".shop.ui.ShoppingActivity" />
         <activity android:name=".orchard.ui.OrchardActivity" />
         <activity android:name=".orchard.ui.SeedCardActivity" />
-        <activity android:name=".orchard.ui.FriendListActivity"></activity>
+        <activity android:name=".orchard.ui.FriendListActivity" />
     </application>
 
 </manifest>

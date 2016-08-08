@@ -10,6 +10,7 @@
         android:orientation="vertical"
         android:background="@color/viewColor">
         <RelativeLayout
+            android:id="@+id/rl_main_top"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@color/title"
@@ -59,12 +60,12 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:id="@+id/tv_main_address"
+                    android:id="@+id/tv_main_area"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="天津工业大学"
-                    android:textSize="12sp"
+                    android:textSize="14sp"
                     android:textColor="@color/viewColor2"/>
             </RelativeLayout>
             <RelativeLayout

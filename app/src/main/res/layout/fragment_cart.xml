@@ -52,8 +52,8 @@
 
                 <CheckBox
                     android:id="@+id/cb_cart_check"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/checkbox_selector"
                     android:button="@null"/>

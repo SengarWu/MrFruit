@@ -38,7 +38,7 @@ public class ShoppingActivity extends BaseActivity implements View.OnClickListen
         switch (view.getId())
         {
             case R.id.ib_back:
-
+                finish();
                 break;
         }
     }
