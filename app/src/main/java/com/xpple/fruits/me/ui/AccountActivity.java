@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import com.xpple.fruits.R;
 import com.xpple.fruits.base.BaseActivity;
+import com.xpple.fruits.bean.CartEntity;
+
+import java.util.List;
 
 public class AccountActivity extends BaseActivity implements View.OnClickListener {
     private ImageButton ib_back;
@@ -26,12 +29,22 @@ public class AccountActivity extends BaseActivity implements View.OnClickListene
     private TextView tv_account_address;
     private TextView tv_account_total_price;
 
+    private List<CartEntity> carts;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
-
         initView();
+        initData();
+    }
+
+    private void initData() {
+        //读取用户信息
+
+        //读取购物车传递的水果数据
+        carts = (List<CartEntity>) getIntent().getSerializableExtra("carts");
+
     }
 
     private void initView() {

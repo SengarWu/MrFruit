@@ -24,6 +24,7 @@ import com.xpple.fruits.bean.CartEntity;
 import com.xpple.fruits.cart.adapter.CartAdapter;
 import com.xpple.fruits.me.ui.AccountActivity;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -253,6 +254,15 @@ public class CartFragment extends BaseFragment implements View.OnClickListener, 
             case R.id.btn_settle://结算
                 Intent intent = new Intent(getActivity(), AccountActivity.class);
 
+                //获取选中的集合
+                for (int i = 0; i < carts.size(); i++) {
+                    if (carts.get(i).ischeck)
+                    {
+
+                    }
+                }
+                //将选中的集合传递给订单提交页面
+                intent.putExtra("carts",(Serializable) selectCarts);
                 startActivity(intent);
                 break;
             default:
