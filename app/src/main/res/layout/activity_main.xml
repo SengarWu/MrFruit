@@ -16,6 +16,11 @@
 
     </FrameLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/viewColor"/>
+
     <RadioGroup
         android:id="@+id/rg_select"
         android:layout_width="match_parent"

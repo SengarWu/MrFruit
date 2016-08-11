@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    tools:context="com.xpple.fruits.main.ui.AreaSelectDialog"
+    tools:context="com.xpple.fruits.main.ui.AreaPopupWindow"
     android:background="@color/base_color_text_white">
 
     <LinearLayout
@@ -30,6 +30,15 @@
                 android:text="天津工业大学"
                 android:background="@drawable/selector_area"/>
 
+            <Button
+                android:id="@+id/btn_area2"
+                android:layout_width="130dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                android:text="天津师范大学"
+                android:background="@drawable/selector_area"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -39,6 +48,22 @@
             android:orientation="vertical"
             android:gravity="center_horizontal">
 
+            <Button
+                android:id="@+id/btn_area3"
+                android:layout_width="130dp"
+                android:layout_height="45dp"
+                android:textSize="16sp"
+                android:text="天津理工大学"
+                android:background="@drawable/selector_area"/>
+
+            <Button
+                android:id="@+id/btn_area4"
+                android:layout_width="130dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                android:text="天津软件学院"
+                android:background="@drawable/selector_area"/>
 
 
         </LinearLayout>
