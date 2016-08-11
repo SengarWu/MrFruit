@@ -59,7 +59,7 @@
 
                             <ImageButton
                                 android:id="@+id/ib_update"
-                                android:background="@mipmap/account_more"
+                                android:background="@mipmap/more"
                                 android:layout_width="13dp"
                                 android:layout_height="21dp" />
 
@@ -393,7 +393,7 @@
                         <ImageButton
                             android:layout_width="13dp"
                             android:layout_height="21dp"
-                            android:background="@mipmap/account_more"/>
+                            android:background="@mipmap/more"/>
                     </LinearLayout>
                 </LinearLayout>
                 <View

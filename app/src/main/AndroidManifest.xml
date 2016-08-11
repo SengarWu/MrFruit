@@ -27,7 +27,9 @@
         <activity android:name=".me.ui.LoginActivity" />
         <activity android:name=".me.ui.Register1Activity" />
         <activity android:name=".me.ui.Register2Activity" />
-        <activity android:name=".me.ui.SeedDetailActivity" />
+        <activity android:name=".me.ui.SeedDetailActivity" >
+
+        </activity>
         <activity android:name=".me.ui.InviteFriendActivity" />
         <activity android:name=".me.ui.AddOtherActivity" />
         <activity android:name=".me.ui.BuySeedActivity" />
