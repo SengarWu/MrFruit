@@ -54,7 +54,6 @@
                         android:layout_width="290dp"
                         android:layout_height="0.5dp"
                         android:layout_gravity="center_horizontal"
-
                         android:background="@color/viewColor"/>
 
                     <LinearLayout

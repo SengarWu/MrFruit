@@ -2,12 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="120dp"
     android:background="@color/viewColor">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
@@ -17,23 +17,22 @@
 
         <CheckBox
             android:id="@+id/cb_cart_check"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:layout_marginLeft="10dp"
             android:background="@drawable/checkbox_selector"
-            android:button="@null"/>
+            android:button="@null"
+            android:checked="true"/>
 
-        <ImageView
+        <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/iv_cart_picture"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:scaleType="centerCrop"
-            android:layout_marginLeft="10dp"
-            android:src="@mipmap/seeds_banana2"/>
+            android:layout_marginLeft="10dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:orientation="vertical"
             android:layout_marginLeft="10dp">
 
@@ -44,20 +43,43 @@
                 android:textSize="@dimen/textSize_textView"
                 android:text="苹果"/>
 
-            <TextView
-                android:id="@+id/tv_cart_price"
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:textSize="@dimen/textSize_textView"
-                android:textColor="@color/base_color_red"
-                android:text="1.00"/>
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="bottom">
+
+                <TextView
+                    android:id="@+id/tv_cart_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize_textView"
+                    android:textColor="@color/base_color_red"
+                    android:text="1.0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="@dimen/textSize_textView"
+                    android:textColor="@color/base_color_red"
+                    android:text="/"/>
+
+                 <TextView
+                    android:id="@+id/tv_cart_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize_textView"
+                    android:textColor="@color/base_color_red"
+                    android:text="个"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:gravity="right"
             android:orientation="vertical"
             android:layout_marginLeft="10dp"
@@ -76,39 +98,39 @@
 
                 <TextView
                     android:id="@+id/tv_cart_sum"
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
+                    android:gravity="right"
                     android:textSize="@dimen/textSize_textView"
                     android:textColor="@color/base_color_red"
-                    android:text="10.00"/>
+                    android:text="0.0"/>
 
             </LinearLayout>
 
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp">
+                android:layout_height="match_parent"
+                android:gravity="bottom">
                 <ImageButton
                     android:id="@+id/ib_cart_sub"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
                     android:background="@mipmap/payinget_jian"/>
                 <TextView
                     android:id="@+id/tv_cart_num"
-                    android:layout_width="wrap_content"
+                    android:layout_width="35dp"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/textview_size"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:textSize="18sp"
                     android:textColor="@color/content"
                     android:text="1"
-                    android:layout_gravity="center_vertical"/>
+                    android:gravity="center"/>
 
                 <ImageButton
                     android:id="@+id/ib_cart_add"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
                     android:background="@mipmap/payinget_add"/>
 
             </LinearLayout>

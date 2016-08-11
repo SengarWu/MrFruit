@@ -26,7 +26,7 @@
                     android:orientation="vertical">
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="45dp"
+                        android:layout_height="40dp"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
                         android:paddingLeft="15dp">
@@ -196,7 +196,7 @@
                     android:orientation="vertical">
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="45dp"
+                        android:layout_height="40dp"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
                         android:paddingLeft="15dp">
@@ -231,89 +231,75 @@
                             android:layout_height="match_parent"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/account_zhifubao"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"/>
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1">
-                                <RadioButton
-                                    android:id="@+id/account_zhifubao"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:checked="true"/>
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:orientation="vertical"
-                                    android:layout_marginLeft="5dp">
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
 
-                                    <ImageView
-                                        android:layout_width="54dp"
-                                        android:layout_height="54dp"
-                                        android:src="@mipmap/account_zhifubao"/>
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="支付宝"
-                                        android:textSize="@dimen/textview_size"
-                                        android:textColor="@color/color_text_black"/>
+                                <ImageView
+                                    android:layout_width="54dp"
+                                    android:layout_height="54dp"
+                                    android:src="@mipmap/account_zhifubao"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="支付宝"
+                                    android:textSize="@dimen/textview_size"
+                                    android:textColor="@color/color_text_black"/>
 
-                                </LinearLayout>
                             </LinearLayout>
+                            <RadioButton
+                                android:id="@+id/account_wechat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1">
-                                <RadioButton
-                                    android:id="@+id/account_wechat"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
-                                <LinearLayout
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <ImageView
+                                    android:layout_width="54dp"
+                                    android:layout_height="54dp"
+                                    android:src="@mipmap/account_wechat"/>
+                                <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:orientation="vertical"
-                                    android:layout_marginLeft="5dp">
-                                    <ImageView
-                                        android:layout_width="54dp"
-                                        android:layout_height="54dp"
-                                        android:src="@mipmap/account_wechat"/>
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="微信支付"
-                                        android:textSize="@dimen/textview_size"
-                                        android:textColor="@color/color_text_black"/>
-                                </LinearLayout>
+                                    android:layout_marginTop="5dp"
+                                    android:text="微信支付"
+                                    android:textSize="@dimen/textview_size"
+                                    android:textColor="@color/color_text_black"/>
                             </LinearLayout>
+
+                            <RadioButton
+                                android:id="@+id/account_deliver"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1">
-                                <RadioButton
-                                    android:id="@+id/account_deliver"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
-                                <LinearLayout
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <ImageView
+                                    android:layout_width="54dp"
+                                    android:layout_height="54dp"
+                                    android:src="@mipmap/account_deliver"/>
+                                <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:orientation="vertical"
-                                    android:layout_marginLeft="5dp">
-                                    <ImageView
-                                        android:layout_width="54dp"
-                                        android:layout_height="54dp"
-                                        android:src="@mipmap/account_deliver"/>
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="货到付款"
-                                        android:textSize="@dimen/textview_size"
-                                        android:textColor="@color/color_text_black"/>
-                                </LinearLayout>
+                                    android:layout_marginTop="5dp"
+                                    android:text="货到付款"
+                                    android:textSize="@dimen/textview_size"
+                                    android:textColor="@color/color_text_black"/>
                             </LinearLayout>
                         </RadioGroup>
                     </LinearLayout>
@@ -327,7 +313,7 @@
                     android:orientation="vertical">
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="45dp"
+                        android:layout_height="40dp"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
                         android:paddingLeft="15dp">
@@ -348,13 +334,40 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/viewColor"/>
-                    <ListView
-                        android:id="@+id/lv_list"
-                        android:layout_marginTop="10dp"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="110dp">
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="水果名称"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="数量"
+                            android:gravity="center_horizontal"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="原价"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="实付价"/>
+                    </LinearLayout>
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:paddingLeft="15dp">
 
-                    </ListView>
+                    </android.support.v7.widget.RecyclerView>
 
                 </LinearLayout>
                 <LinearLayout
@@ -436,8 +449,9 @@
                 android:id="@+id/account_pay"
                 android:layout_width="112dp"
                 android:layout_height="match_parent"
-                android:background="@color/title"
-                android:text="结算"
+                android:background="@mipmap/btn_settlement"
+                android:gravity="center"
+                android:text="提交订单"
                 android:textSize="@dimen/content_titlesize"
                 android:textColor="@color/account"
                 android:layout_alignParentRight="true"/>

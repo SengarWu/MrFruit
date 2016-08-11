@@ -32,6 +32,7 @@ public class MainFragment extends BaseFragment implements View.OnClickListener {
     private ImageButton ib_main_buy_seed;
     private View parentView;
 
+
     private AreaPopupWindow areaPopupWindow;
 
     @Override
@@ -78,7 +79,7 @@ public class MainFragment extends BaseFragment implements View.OnClickListener {
                     public void onClick(View view) {
                         //点击某个学校，目前只是关闭弹窗
                         areaPopupWindow.dismiss();
-                        //tv_main_area.setText("天津工业大学");
+                        tv_main_area.setText("天津工业大学");
                     }
                 });
                 // 以下拉方式显示
