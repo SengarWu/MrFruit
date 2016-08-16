@@ -4,7 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <!--textSize-->
-    <dimen name="textSize_actionbar">24sp</dimen>
+    <dimen name="textSize_actionbar">20sp</dimen>
     <dimen name="textSize_btn">20sp</dimen>
     <dimen name="textSize_textView">14sp</dimen>
     <dimen name="textSize_editText">16sp</dimen>
