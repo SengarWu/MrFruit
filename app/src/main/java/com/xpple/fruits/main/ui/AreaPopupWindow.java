@@ -18,6 +18,9 @@ import com.xpple.fruits.utils.DensityUtil;
  */
 public class AreaPopupWindow extends PopupWindow{
     private Button btn_area1;
+    private Button btn_area2;
+    private Button btn_area3;
+    private Button btn_area4;
     private View parentView;
 
     public  AreaPopupWindow(Activity context, View.OnClickListener itemsOnClick)
@@ -28,6 +31,12 @@ public class AreaPopupWindow extends PopupWindow{
         parentView = inflater.inflate(R.layout.activity_area_select_dialog,null);
         btn_area1 = (Button) parentView.findViewById(R.id.btn_area1);
         btn_area1.setOnClickListener(itemsOnClick);
+        btn_area2 = (Button) parentView.findViewById(R.id.btn_area2);
+        btn_area2.setOnClickListener(itemsOnClick);
+        btn_area3 = (Button) parentView.findViewById(R.id.btn_area3);
+        btn_area3.setOnClickListener(itemsOnClick);
+        btn_area4 = (Button) parentView.findViewById(R.id.btn_area4);
+        btn_area4.setOnClickListener(itemsOnClick);
         //设置AreaPopupWindow的View
         this.setContentView(parentView);
         //设置AreaPopupWindow弹出窗体的宽
@@ -44,7 +53,7 @@ public class AreaPopupWindow extends PopupWindow{
         parentView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                int height = parentView.findViewById(R.id.pop_layout).getTop();
+                int height = parentView.findViewById(R.id.pop_layout_main).getTop();
                 int y=(int) motionEvent.getY();
                 if(motionEvent.getAction()==MotionEvent.ACTION_UP){
                     if(y<height){

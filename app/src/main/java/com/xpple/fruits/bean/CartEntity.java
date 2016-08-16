@@ -1,16 +1,27 @@
 package com.xpple.fruits.bean;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2016/8/9.
  */
-public class CartEntity  {
+public class CartEntity implements Serializable {
     public String fruit_Image;
     public String fruit_name;
     public Boolean ischeck;
     public double fruit_price;
+    public double fruit_discount;
     public String fruit_unit;
     public double sum;
     public int number;
+
+    public void setFruit_account(double fruit_account) {
+        this.fruit_discount = fruit_account;
+    }
+
+    public double getFruit_account() {
+        return fruit_discount;
+    }
 
     public void setFruit_Image(String fruit_Image) {
         this.fruit_Image = fruit_Image;

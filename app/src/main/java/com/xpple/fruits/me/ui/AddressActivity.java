@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.xpple.fruits.R;
 import com.xpple.fruits.base.BaseActivity;
+import com.xpple.fruits.cart.ui.AccountActivity;
 
 public class AddressActivity extends BaseActivity implements View.OnClickListener {
     private ImageButton ib_back;

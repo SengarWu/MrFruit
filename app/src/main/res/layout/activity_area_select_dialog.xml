@@ -7,7 +7,7 @@
     android:background="@color/base_color_text_white">
 
     <LinearLayout
-        android:id="@+id/pop_layout"
+        android:id="@+id/pop_layout_main"
         android:layout_width="match_parent"
         android:layout_height="170dp"
         android:orientation="horizontal"

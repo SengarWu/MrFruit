@@ -1,21 +1,23 @@
-package com.xpple.fruits.me.ui;
+package com.xpple.fruits.shop.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.xpple.fruits.R;
 import com.xpple.fruits.base.BaseActivity;
+import com.xpple.fruits.utils.StringUtil;
 
 public class SeedDetailActivity extends BaseActivity implements View.OnClickListener {
     private ImageButton ib_back;
     private TextView tv_title;
-    private LinearLayout ll_seed_detail_fruit;//水果图片
-    private ImageView iv_seed_detail_head;//果种图片
+    private SimpleDraweeView iv_seed_detail_image;//水果图片
+    private ImageView iv_seed_detail_head;//果种宝宝图片
     private TextView tv_seed_detail_name;//果种名称
     private TextView tv_seed_detail_inform;//果种故事概述
     private TextView tv_seed_detail_condition;//解锁条件
@@ -29,21 +31,41 @@ public class SeedDetailActivity extends BaseActivity implements View.OnClickList
     private ImageButton ib_seed_detail_sub;
     private ImageButton ib_seed_detail_add;
     private Button bt_seed_detail_confirm;
+
+    private String seedId;
+    private int num = 1;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seed_detail);
         initView();
+        initData();
+        setupView();
+    }
+
+    private void setupView() {
+        //测试图片地址
+        iv_seed_detail_image.setImageURI("http://b.hiphotos.baidu.com/image/h%3D200/sign=8e8564a10c46f21fd6345953c6256b31/00e93901213fb80e22a34b8d30d12f2eb938947d.jpg");
+    }
+
+    private void initData() {
+        Intent intent = getIntent();
+        if (intent != null)
+        {
+            seedId = intent.getStringExtra("seedId");
+        }
+        if (StringUtil.isNotEmpty(seedId))
+        {
+            //网络请求操作
+
+        }
     }
 
     private void initView() {
         ib_back = $(R.id.ib_back);
-        ib_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        ib_back.setOnClickListener(this);
         tv_title = $(R.id.tv_title);
         tv_title.setText("果种详情");
         ib_seed_detail_sub=$(R.id.ib_seed_detail_sub);
@@ -52,7 +74,7 @@ public class SeedDetailActivity extends BaseActivity implements View.OnClickList
         ib_seed_detail_add.setOnClickListener(this);
         bt_seed_detail_confirm=$(R.id.bt_seed_detail_confirm);
         bt_seed_detail_confirm.setOnClickListener(this);
-        ll_seed_detail_fruit=$(R.id.ll_seed_detail_fruit);
+        iv_seed_detail_image=$(R.id.iv_seed_detail_image);
         iv_seed_detail_head=$(R.id.iv_seed_detail_head);
         tv_seed_detail_name=$(R.id.tv_seed_detail_name);
         tv_seed_detail_inform=$(R.id.tv_seed_detail_inform);
@@ -69,17 +91,26 @@ public class SeedDetailActivity extends BaseActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
          switch (v.getId()){
+             case R.id.ib_back://返回键
+                 finish();
+                 break;
              case R.id.ib_seed_detail_sub://点击减号
-
+                 if (num > 1)
+                 {
+                     num--;
+                     tv_seed_detail_num.setText(String.valueOf(num));
+                 }
                  break;
              case R.id.ib_seed_detail_add://点击加号
-
+                if (num < 99)
+                {
+                    num++;
+                    tv_seed_detail_num.setText(String.valueOf(num));
+                }
                  break;
              case R.id.bt_seed_detail_confirm://点击确认购买
 
                  break;
          }
-
-
-        }
+    }
 }

@@ -9,6 +9,7 @@ import android.os.Message;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +23,6 @@ import com.xpple.fruits.R;
 import com.xpple.fruits.base.BaseFragment;
 import com.xpple.fruits.bean.CartEntity;
 import com.xpple.fruits.cart.adapter.CartAdapter;
-import com.xpple.fruits.me.ui.AccountActivity;
 
 import java.io.Serializable;
 import java.text.DecimalFormat;
@@ -45,7 +45,7 @@ public class CartFragment extends BaseFragment implements View.OnClickListener, 
 
     private CartAdapter adapter;
 
-    private DecimalFormat df   = new DecimalFormat("######0.00");
+    private DecimalFormat df   = new DecimalFormat("######0.0");
 
     private final int REFRESH_DELAY = 1001;
     private Handler handler = new Handler(){
@@ -54,6 +54,8 @@ public class CartFragment extends BaseFragment implements View.OnClickListener, 
             switch (msg.what)
             {
                 case REFRESH_DELAY:
+                    //先做一次网络保存请求
+
                     initData();
                     setupView();
                     srl_cart.setRefreshing(false);
@@ -76,6 +78,7 @@ public class CartFragment extends BaseFragment implements View.OnClickListener, 
         adapter = new CartAdapter(carts);
         //设置动画效果
         adapter.openLoadAnimation();
+        //加载更多
         adapter.openLoadMore(false);
         rv_cart.setAdapter(adapter);
         //回调子控件点击事件
@@ -184,6 +187,7 @@ public class CartFragment extends BaseFragment implements View.OnClickListener, 
             cart.ischeck = true;
             cart.fruit_name = "柠檬";
             cart.fruit_price = 10.00;
+            cart.fruit_discount = 8.0;
             cart.fruit_unit = "斤";
             cart.number = 1;
             cart.sum = cart.fruit_price * cart.number;
@@ -253,12 +257,15 @@ public class CartFragment extends BaseFragment implements View.OnClickListener, 
                 break;
             case R.id.btn_settle://结算
                 Intent intent = new Intent(getActivity(), AccountActivity.class);
-
                 //获取选中的集合
+                if (selectCarts != null)
+                {
+                    selectCarts.clear();
+                }
                 for (int i = 0; i < carts.size(); i++) {
                     if (carts.get(i).ischeck)
                     {
-
+                        selectCarts.add(carts.get(i));
                     }
                 }
                 //将选中的集合传递给订单提交页面
@@ -268,6 +275,13 @@ public class CartFragment extends BaseFragment implements View.OnClickListener, 
             default:
                 break;
         }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.d("onPause","onPause");
+
     }
 
     @Override

@@ -3,7 +3,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:orientation="vertical"
     tools:context="com.xpple.fruits.me.ui.MyOrderActivity">
+
+    <include layout="@layout/actionbar"/>
+
+    <LinearLayout
+        android:id="@+id/ll_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:background="@color/viewColor">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/srl_order"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_order"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            </android.support.v7.widget.RecyclerView>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

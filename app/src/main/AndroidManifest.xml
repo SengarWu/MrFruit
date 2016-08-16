@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.xpple.fruits">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".base.CustomApplication"
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".main.ui.DiscoverActivity" />
-        <activity android:name=".me.ui.AccountActivity" />
+        <activity android:name=".cart.ui.AccountActivity" />
         <activity android:name=".me.ui.UpdatePersonalActivity" />
         <activity android:name=".me.ui.MyOrderActivity" />
         <activity android:name=".me.ui.MyGetCoinActivity" />
@@ -29,16 +29,15 @@
         <activity android:name=".me.ui.LoginActivity" />
         <activity android:name=".me.ui.Register1Activity" />
         <activity android:name=".me.ui.Register2Activity" />
-        <activity android:name=".me.ui.SeedDetailActivity" >
-
-        </activity>
+        <activity android:name=".shop.ui.SeedDetailActivity"></activity>
         <activity android:name=".me.ui.InviteFriendActivity" />
         <activity android:name=".me.ui.AddOtherActivity" />
-        <activity android:name=".me.ui.BuySeedActivity" />
+        <activity android:name=".shop.ui.BuySeedActivity" />
         <activity android:name=".shop.ui.ShoppingActivity" />
         <activity android:name=".orchard.ui.OrchardActivity" />
         <activity android:name=".orchard.ui.SeedCardActivity" />
         <activity android:name=".orchard.ui.FriendListActivity" />
+        <activity android:name=".main.ui.DiscoverDetailActivity"></activity>
     </application>
 
 </manifest>

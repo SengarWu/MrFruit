@@ -11,9 +11,10 @@ import android.widget.TextView;
 
 import com.xpple.fruits.R;
 import com.xpple.fruits.base.BaseFragment;
-import com.xpple.fruits.me.ui.SeedDetailActivity;
+import com.xpple.fruits.shop.ui.SeedDetailActivity;
 import com.xpple.fruits.orchard.ui.OrchardActivity;
 import com.xpple.fruits.shop.ui.ShoppingActivity;
+import com.xpple.fruits.utils.ToastUtil;
 
 public class MainFragment extends BaseFragment implements View.OnClickListener {
     private TextView tv_main_area;
@@ -77,9 +78,18 @@ public class MainFragment extends BaseFragment implements View.OnClickListener {
                 areaPopupWindow = new AreaPopupWindow(getActivity(), new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        //点击某个学校，目前只是关闭弹窗
+                        switch (view.getId())
+                        {
+                            case R.id.btn_area1:
+                                tv_main_area.setText("天津工业大学");
+                                break;
+                            case R.id.btn_area2:
+                            case R.id.btn_area3:
+                            case R.id.btn_area4:
+                                ToastUtil.showShort(getActivity(),"该区域正在接入中...");
+                                break;
+                        }
                         areaPopupWindow.dismiss();
-                        tv_main_area.setText("天津工业大学");
                     }
                 });
                 // 以下拉方式显示

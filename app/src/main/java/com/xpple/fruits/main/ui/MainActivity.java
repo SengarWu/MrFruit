@@ -23,8 +23,6 @@ public class MainActivity extends BaseActivity{
     private MainFragment mainFragment;
     private MeFragment meFragment;
 
-    private int index;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

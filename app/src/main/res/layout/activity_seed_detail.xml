@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/seed_detail_other"
     android:orientation="vertical"
-    tools:context="com.xpple.fruits.me.ui.SeedDetailActivity">
+    tools:context=".shop.ui.SeedDetailActivity">
     <include layout="@layout/actionbar"/>
     <ScrollView
         android:layout_width="match_parent"
@@ -13,18 +13,18 @@
         android:fillViewport="true">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
             <RelativeLayout
-                android:id="@+id/ll_seed_detail_fruit"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:orientation="vertical">
 
-                <ImageView
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_seed_detail_image"
+                    android:scaleType="center"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@mipmap/seeds_banana2" />
+                    android:layout_height="match_parent" />
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -203,6 +203,7 @@
                     android:orientation="vertical"
                     android:layout_marginTop="20dp"
                     android:padding="20dp"
+                    android:gravity="bottom"
                     android:background="@mipmap/fruit_detail_inform">
                     <LinearLayout
                         android:layout_width="match_parent"

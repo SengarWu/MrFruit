@@ -1,7 +1,5 @@
 package com.xpple.fruits.cart.adapter;
 
-import android.view.View;
-
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -16,8 +14,7 @@ import java.util.List;
  */
 public class CartAdapter extends BaseQuickAdapter<CartEntity> {
 
-    private DecimalFormat df   = new DecimalFormat("######0.00");
-    private View parentView;
+    private DecimalFormat df   = new DecimalFormat("######0.0");
 
     public CartAdapter(List<CartEntity> data) {
         super(R.layout.cart_item, data);
@@ -40,6 +37,7 @@ public class CartAdapter extends BaseQuickAdapter<CartEntity> {
         baseViewHolder.setOnClickListener(R.id.ib_cart_add,new OnItemChildClickListener())
                 .setOnClickListener(R.id.ib_cart_sub,new OnItemChildClickListener())
                 .setOnClickListener(R.id.cb_cart_check,new OnItemChildClickListener());
+
 
         /*if (TextUtils.isEmpty(cart.fruit_Image))
         {

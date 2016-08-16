@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.xpple.fruits.R;
 import com.xpple.fruits.base.BaseActivity;
+import com.xpple.fruits.cart.ui.AccountActivity;
 
 public class AddOtherActivity extends BaseActivity implements View.OnClickListener {
     private EditText et_add_other_content;

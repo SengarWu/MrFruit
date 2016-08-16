@@ -84,7 +84,8 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
         switch (v.getId())
         {
             case R.id.ib_mine_list://我的订单
-
+                Intent intent = new Intent(getActivity(),MyOrderActivity.class);
+                startActivity(intent);
                 break;
             case R.id.ib_mine_update://版本更新
 

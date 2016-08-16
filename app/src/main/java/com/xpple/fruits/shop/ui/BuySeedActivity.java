@@ -1,4 +1,4 @@
-package com.xpple.fruits.me.ui;
+package com.xpple.fruits.shop.ui;
 
 import android.os.Bundle;
 import android.view.View;
