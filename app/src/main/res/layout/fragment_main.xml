@@ -154,105 +154,100 @@
                     android:textColor="@color/color_text_black"/>
             </LinearLayout>
         </LinearLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="@mipmap/first_page_background_bottom_icon"
-            android:layout_weight="1">
-
-        </RelativeLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="129dp"
-            android:background="@mipmap/first_page_background_ad1"
             android:layout_weight="7"
             android:orientation="horizontal">
-
-            <RelativeLayout
-                android:layout_width="118dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:layout_marginTop="60dp">
-
-                <TextView
-                    android:id="@+id/tv_main_fruit_name"
-                    android:layout_width="92dp"
-                    android:layout_height="32dp"
-                    android:background="@mipmap/first_page_label_left"
-                    android:text=" 海南大菠萝"
-                    android:textColor="@color/color_text_black"
-                    android:textSize="14sp"
-                    android:gravity="center_vertical"
-                    />
-
-            </RelativeLayout>
             <LinearLayout
-                android:layout_width="180dp"
+                android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:orientation="vertical">
+                android:background="@mipmap/first_page_ad_left"
+                android:layout_weight="1">
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:layout_weight="1">
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginTop="50dp">
+
+                    <TextView
+                        android:id="@+id/tv_main_fruit_name"
+                        android:layout_width="92dp"
+                        android:layout_height="32dp"
+                        android:background="@mipmap/first_page_label_left"
+                        android:text=" 海南大菠萝"
+                        android:textColor="@color/color_text_black"
+                        android:textSize="12sp"
+                        android:gravity="center_vertical"
+                        />
+
                 </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal|bottom"
+                android:background="@mipmap/first_page_activity_mid"
+                android:layout_weight="2">
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:layout_weight="5">
+                    android:layout_height="70dp"
+                    android:layout_marginBottom="25dp">
                     <ImageView
                         android:id="@+id/iv_main_fruit_image"
                         android:src="@mipmap/first_page_image_bargin_fruit"
                         android:layout_width="match_parent"
-                        android:layout_height="80dp" />
+                        android:layout_height="match_parent" />
                 </RelativeLayout>
-
-
             </LinearLayout>
             <LinearLayout
-                android:layout_width="118dp"
+                android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:background="@mipmap/first_page_activity_right"
+                android:orientation="vertical"
+                android:layout_weight="1">
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="15dp"
                     android:orientation="horizontal"
-                    android:gravity="bottom">
+                    android:gravity="bottom|center_horizontal">
                     <TextView
                         android:id="@+id/tv_main_bargain_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="12"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textColor="@color/base_color_red"
                         android:layout_marginLeft="14dp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="元/"
-                        android:textSize="14sp"
-                        android:textColor="@color/content"
+                        android:textSize="12sp"
+                        android:textColor="@color/color_text_black"
                         />
                     <TextView
                         android:id="@+id/tv_main_weight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="500"
-                        android:textSize="14sp"
-                        android:textColor="@color/content"/>
+                        android:textSize="12sp"
+                        android:textColor="@color/color_text_black"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="克"
-                        android:textSize="14sp"
-                        android:textColor="@color/content"/>
-
+                        android:textSize="12sp"
+                        android:textColor="@color/color_text_black"/>
                 </LinearLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="58dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
                     android:gravity="center">
                     <ImageButton
                         android:id="@+id/ib_main_buy_fruit"
@@ -261,97 +256,102 @@
                         android:background="@mipmap/first_page_button_clicktobuy"/>
                 </RelativeLayout>
             </LinearLayout>
-
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="146dp"
-            android:background="@mipmap/first_page_background_ad2"
+            android:layout_height="129dp"
+            android:orientation="horizontal"
+            android:paddingLeft="4dp"
             android:layout_weight="9">
             <LinearLayout
-                android:layout_width="118dp"
+                android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:orientation="horizontal"
-                    android:gravity="bottom">
-                    <TextView
-                        android:id="@+id/tv_main_get_number"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="3"
-                        android:textSize="20dp"
-                        android:textColor="@color/base_color_red"
-                        android:layout_marginLeft="20dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Get币"
-                        android:textSize="14sp"
-                        android:textColor="@color/content"
-                        />
+                android:orientation="vertical"
+                android:background="@mipmap/first_page_activity2_left"
+                android:layout_weight="1">
 
-                </LinearLayout>
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="58dp"
-                    android:gravity="center">
-                    <ImageButton
-                        android:id="@+id/ib_main_buy_seed"
-                        android:layout_width="65dp"
-                        android:layout_height="30dp"
-                        android:background="@mipmap/first_page_button_clicktobuy"/>
-                </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:paddingBottom="10dp"
+                        android:paddingRight="10dp"
+                        android:gravity="bottom|center_horizontal">
+                        <TextView
+                            android:id="@+id/tv_main_get_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3"
+                            android:textSize="16sp"
+                            android:textColor="@color/base_color_red"
+                            android:layout_marginLeft="20dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Get币"
+                            android:textSize="12sp"
+                            android:textColor="@color/color_text_black"
+                            />
+
+                    </LinearLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal">
+                        <ImageButton
+                            android:id="@+id/ib_main_buy_seed"
+                            android:layout_width="65dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@mipmap/first_page_button_clicktobuy"/>
+                    </RelativeLayout>
+
             </LinearLayout>
             <LinearLayout
-                android:layout_width="180dp"
+                android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:orientation="vertical">
+                android:background="@mipmap/first_page_activity2_mid"
+                android:layout_weight="2">
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:layout_weight="1">
-                </RelativeLayout>
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:layout_weight="5">
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_vertical">
                     <ImageView
                         android:id="@+id/iv_main_seed_image"
                         android:src="@mipmap/first_page_image_bargin_fruit"
                         android:layout_width="match_parent"
-                        android:layout_height="80dp" />
+                        android:layout_height="match_parent" />
                 </RelativeLayout>
-
-
             </LinearLayout>
-
-            <RelativeLayout
-                android:layout_width="118dp"
+            <LinearLayout
+                android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:layout_marginTop="60dp">
+                android:layout_marginRight="5dp"
+                android:background="@mipmap/first_page_ad_right"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="118dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp">
 
-                <TextView
-                    android:id="@+id/tv_main_activity_seed"
-                    android:layout_width="92dp"
-                    android:layout_height="32dp"
-                    android:background="@mipmap/first_page_label_right"
-                    android:text="万圣节果种 "
-                    android:textColor="@color/color_text_black"
-                    android:textSize="14sp"
-                    android:gravity="center_vertical|right"
-                    />
+                    <TextView
+                        android:id="@+id/tv_main_activity_seed"
+                        android:layout_width="92dp"
+                        android:layout_height="32dp"
+                        android:background="@mipmap/first_page_label_right"
+                        android:text=" 万圣节果种"
+                        android:textColor="@color/color_text_black"
+                        android:textSize="12sp"
+                        android:gravity="center" />
 
-            </RelativeLayout>
-
+                </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
 
 </FrameLayout>

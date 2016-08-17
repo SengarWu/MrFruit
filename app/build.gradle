@@ -40,5 +40,5 @@ dependencies {
 
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:v1.9.7'
 
-    compile project(':mylibrary')
+    //compile project(':mylibrary')
 }
