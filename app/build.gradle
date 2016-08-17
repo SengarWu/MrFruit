@@ -39,6 +39,4 @@ dependencies {
     compile 'com.facebook.fresco:fresco:0.12.0'
 
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:v1.9.7'
-
-    compile project(':mylibrary')
 }

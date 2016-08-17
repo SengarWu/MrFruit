@@ -15,6 +15,10 @@ import com.xpple.fruits.shop.ui.SeedDetailActivity;
 import com.xpple.fruits.orchard.ui.OrchardActivity;
 import com.xpple.fruits.shop.ui.ShoppingActivity;
 import com.xpple.fruits.utils.ToastUtil;
+import com.xpple.fruits.view.BannerLayout;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainFragment extends BaseFragment implements View.OnClickListener {
     private TextView tv_main_area;
@@ -31,17 +35,41 @@ public class MainFragment extends BaseFragment implements View.OnClickListener {
     private TextView tv_main_activity_seed;
     private ImageView iv_main_seed_image;
     private ImageButton ib_main_buy_seed;
+    private BannerLayout bl_main;
+    private AreaPopupWindow areaPopupWindow;
+
     private View parentView;
 
-
-    private AreaPopupWindow areaPopupWindow;
+    List<String> urls;
+    List<String> links;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         parentView = inflater.inflate(R.layout.fragment_main, container, false);
         initView();
+        initData();
         return parentView;
+    }
+
+    private void initData() {
+        urls = new ArrayList<>();
+        urls.add("http://mmbiz.qpic.cn/mmbiz/PY1lZ0Jrn5u0ibyOSHvJzkXJUNQrYZddeju0oOZ0LQpAxAPRJvJJDqbqyvPeuQA95VqlvMtp35df5oZCXict7uBQ/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1");
+        urls.add("http://mmbiz.qpic.cn/mmbiz/PY1lZ0Jrn5vTAATVH4tgRTfhob579P4UspavECC5y4LoIl54jqpcRxTF4zx7gCPibOWjc2TC7ObmRZsIhicDGDpg/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1");
+        urls.add("http://b.hiphotos.baidu.com/image/h%3D200/sign=8e8564a10c46f21fd6345953c6256b31/00e93901213fb80e22a34b8d30d12f2eb938947d.jpg");
+        bl_main.setViewUrls(urls);
+        links = new ArrayList<>();
+        links.add("http://mp.weixin.qq.com/s?__biz=MzI5MjA3Mzc3Ng==&mid=2652588910&idx=2&sn=bf55c8bab682a6291b90fc85f15f4c7e&scene=1&srcid=0817S0cGFMvEcbSyTLgpQXjZ#rd");
+        links.add("http://mp.weixin.qq.com/s?__biz=MzI5MjA3Mzc3Ng==&mid=2652588920&idx=1&sn=12648f9ce7c9137f5644e9bc480679d7&scene=1&srcid=0817Bwmd4buuNAboMo5542A4#rd");
+        links.add("http://mp.weixin.qq.com/s?__biz=MzI5MjA3Mzc3Ng==&mid=2652588749&idx=1&sn=07bd5a59c22b10e698533960c0a38d1e&scene=1&srcid=0817W0BEYDwZ6taWCU1ml6U8#rd");
+        bl_main.setOnBannerItemClickListener(new BannerLayout.OnBannerItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Intent intent = new Intent(getActivity(),DiscoverDetailActivity.class);
+                intent.putExtra("link",links.get(position));
+                startActivity(intent);
+            }
+        });
     }
 
     private void initView() {
@@ -60,6 +88,7 @@ public class MainFragment extends BaseFragment implements View.OnClickListener {
         ib_main_buy_seed.setOnClickListener(this);
         iv_main_seed_image= (ImageView) parentView.findViewById(R.id.iv_main_seed_image);
         iv_main_seed_image.setOnClickListener(this);
+        bl_main = (BannerLayout) parentView.findViewById(R.id.bl_main);
     }
 
     public static MainFragment newInstance() {

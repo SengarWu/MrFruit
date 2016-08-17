@@ -31,11 +31,17 @@
                 android:gravity="center"/>
         </RelativeLayout>
 
-
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:layout_weight="8">
+            android:layout_height="150dp">
+
+            <com.xpple.fruits.view.BannerLayout
+                android:id="@+id/bl_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            </com.xpple.fruits.view.BannerLayout>
 
         </RelativeLayout>
         <LinearLayout
@@ -183,8 +189,7 @@
                     android:text=" 海南大菠萝"
                     android:textColor="@color/color_text_black"
                     android:textSize="14sp"
-                    android:gravity="center_vertical"
-                    />
+                    android:gravity="center_vertical" />
 
             </RelativeLayout>
             <LinearLayout

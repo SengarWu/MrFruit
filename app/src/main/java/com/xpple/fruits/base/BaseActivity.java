@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
-import android.widget.Toast;
 
 import com.xpple.fruits.utils.CommonUtils;
 
@@ -22,20 +21,12 @@ public class BaseActivity extends FragmentActivity {
         super.onCreate(savedInstanceState, persistentState);
         //禁止横屏
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        //将Activity添加到栈
+        ActivityManager.getInstance().addActivity(this);
     }
 
     public boolean isNetConnected() {
         return CommonUtils.isNetworkAvailable(mContext);
-    }
-
-    public void showToastShort(String message)
-    {
-        Toast.makeText(mContext,message,Toast.LENGTH_SHORT).show();
-    }
-
-    public void showToastLong(String message)
-    {
-        Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
     }
 
     public void startAnimActivity(Class<?> cla) {
@@ -50,4 +41,9 @@ public class BaseActivity extends FragmentActivity {
         return (T) super.findViewById(resId);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityManager.getInstance().finishActivity(this);
+    }
 }

@@ -3,12 +3,14 @@ package com.xpple.fruits.main.ui;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.widget.RadioGroup;
 
 import com.xpple.fruits.R;
 import com.xpple.fruits.base.BaseActivity;
 import com.xpple.fruits.cart.ui.CartFragment;
 import com.xpple.fruits.me.ui.MeFragment;
+import com.xpple.fruits.utils.ToastUtil;
 
 public class MainActivity extends BaseActivity{
 
@@ -22,6 +24,8 @@ public class MainActivity extends BaseActivity{
     private CartFragment cartFragment;
     private MainFragment mainFragment;
     private MeFragment meFragment;
+
+    private long exitTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,5 +109,21 @@ public class MainActivity extends BaseActivity{
             transaction.hide(mainFragment);
         if (meFragment != null)
             transaction.hide(meFragment);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+            //两秒之内按返回键就会退出
+            if ((System.currentTimeMillis() - exitTime) > 2000) {
+                ToastUtil.showLong(this,"再按一次退出程序哦");
+                exitTime = System.currentTimeMillis();
+            } else {
+                finish();
+                System.exit(0);
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

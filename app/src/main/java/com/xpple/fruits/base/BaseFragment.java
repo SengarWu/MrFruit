@@ -41,4 +41,6 @@ public class BaseFragment extends Fragment {
         super.onSaveInstanceState(outState);
         outState.putBoolean(STATE_SAVE_IS_HIDDEN, isHidden());
     }
+
+
 }
