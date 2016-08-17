@@ -34,8 +34,15 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="150dp"
             android:layout_weight="8">
+
+            <com.xpple.fruits.view.BannerLayout
+                android:id="@+id/bl_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </com.xpple.fruits.view.BannerLayout>
 
         </RelativeLayout>
         <LinearLayout
