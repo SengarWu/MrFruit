@@ -1,28 +1,37 @@
 package com.xpple.fruits.me.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.xpple.fruits.R;
 import com.xpple.fruits.base.BaseActivity;
+import com.xpple.fruits.me.presenter.RegisterPresenter;
+import com.xpple.fruits.me.presenter.RegisterPresenterImpl;
+import com.xpple.fruits.me.view.RegisterView;
+import com.xpple.fruits.view.DeletableEditText;
 
-public class Register2Activity extends BaseActivity implements View.OnClickListener {
+public class Register2Activity extends BaseActivity implements View.OnClickListener,RegisterView {
     private ImageButton ib_back;
     private TextView tv_title;
-    private EditText et_register2_password;
-    private EditText et_register2_confirm_password;
-    private EditText et_register2_invite_code;
-    private Button bt_register2_confirm;
+    private DeletableEditText et_register2_password;
+    private DeletableEditText et_register2_confirm_password;
+    private DeletableEditText et_register2_invite_code;
+    private Button btn_register2_confirm;
+
+    private RegisterPresenter presenter;
+
+    private String message;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register2);
         initView();
+        presenter = new RegisterPresenterImpl(this);
     }
 
     private void initView() {
@@ -35,8 +44,8 @@ public class Register2Activity extends BaseActivity implements View.OnClickListe
         });
         tv_title = $(R.id.tv_title);
         tv_title.setText("注册");
-        bt_register2_confirm=$(R.id.bt_register2_confirm);
-        bt_register2_confirm.setOnClickListener(this);
+        btn_register2_confirm=$(R.id.btn_register2_confirm);
+        btn_register2_confirm.setOnClickListener(this);
         et_register2_password=$(R.id.et_register2_password);
         et_register2_confirm_password=$(R.id.et_register2_confirm_password);
         et_register2_invite_code=$(R.id.et_register2_invite_code);
@@ -46,9 +55,30 @@ public class Register2Activity extends BaseActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
 
-            case R.id.bt_register2_confirm://点击注册
-                startActivity(new Intent(Register2Activity.this,LoginActivity.class));
+            case R.id.btn_register2_confirm://点击注册
+                //message = presenter.onRegister()
+                //startActivity(new Intent(Register2Activity.this,LoginActivity.class));
                 break;
         }
+    }
+
+    @Override
+    public void showProgress() {
+
+    }
+
+    @Override
+    public void hideProgress() {
+
+    }
+
+    @Override
+    public void registerSuccess() {
+
+    }
+
+    @Override
+    public void registerFail() {
+
     }
 }

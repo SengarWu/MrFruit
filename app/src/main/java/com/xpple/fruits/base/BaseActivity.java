@@ -21,8 +21,6 @@ public class BaseActivity extends FragmentActivity {
         super.onCreate(savedInstanceState, persistentState);
         //禁止横屏
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        //将Activity添加到栈
-        ActivityManager.getInstance().addActivity(this);
     }
 
     public boolean isNetConnected() {
@@ -39,11 +37,5 @@ public class BaseActivity extends FragmentActivity {
 
     protected   <T extends View> T $(int resId) {
         return (T) super.findViewById(resId);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        ActivityManager.getInstance().finishActivity(this);
     }
 }

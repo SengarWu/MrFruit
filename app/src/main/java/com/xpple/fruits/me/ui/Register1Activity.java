@@ -4,21 +4,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.xpple.fruits.R;
 import com.xpple.fruits.base.BaseActivity;
+import com.xpple.fruits.view.DeletableEditText;
 
 public class Register1Activity extends BaseActivity implements View.OnClickListener {
     private ImageButton ib_back;
     private TextView tv_title;
-    private EditText et_register1_name;
-    private EditText et_register1_tel;
-    private EditText et_register1_password;
-    private Button bt_register1_getcode;
-    private Button bt_register1_confirm;
+    private DeletableEditText et_register1_username;
+    private DeletableEditText et_register1_tel;
+    private DeletableEditText et_register1_password;
+    private Button btn_register1_getcode;
+    private Button btn_register1_confirm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,11 +36,11 @@ public class Register1Activity extends BaseActivity implements View.OnClickListe
         });
         tv_title = $(R.id.tv_title);
         tv_title.setText("注册");
-        bt_register1_getcode=$(R.id.bt_register1_getcode);
-        bt_register1_getcode.setOnClickListener(this);
-        bt_register1_confirm=$(R.id.bt_register1_confirm);
-        bt_register1_confirm.setOnClickListener(this);
-        et_register1_name=$(R.id.et_register1_name);
+        btn_register1_getcode=$(R.id.btn_register1_getcode);
+        btn_register1_getcode.setOnClickListener(this);
+        btn_register1_confirm=$(R.id.btn_register1_confirm);
+        btn_register1_confirm.setOnClickListener(this);
+        et_register1_username=$(R.id.et_register1_username);
         et_register1_tel=$(R.id.et_register1_tel);
         et_register1_password=$(R.id.et_register1_password);
 

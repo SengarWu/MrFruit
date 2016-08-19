@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,12 +30,12 @@ public class MainFragment extends BaseFragment implements View.OnClickListener {
     private TextView tv_main_fruit_name;
     private TextView tv_main_bargain_price;
     private TextView tv_main_weight;
-    private ImageButton ib_main_buy_fruit;
+    private Button btn_main_buy_fruit;
     private ImageView iv_main_fruit_image;
     private TextView tv_main_get_number;
     private TextView tv_main_activity_seed;
     private ImageView iv_main_seed_image;
-    private ImageButton ib_main_buy_seed;
+    private Button btn_main_buy_seed;
     private BannerLayout bl_main;
     private AreaPopupWindow areaPopupWindow;
 
@@ -82,10 +83,10 @@ public class MainFragment extends BaseFragment implements View.OnClickListener {
         ib_main_orchard.setOnClickListener(this);
         ib_main_find= (ImageButton) parentView.findViewById(R.id.ib_main_find);
         ib_main_find.setOnClickListener(this);
-        ib_main_buy_fruit= (ImageButton) parentView.findViewById(R.id.ib_main_buy_fruit);
-        ib_main_buy_fruit.setOnClickListener(this);
-        ib_main_buy_seed= (ImageButton) parentView.findViewById(R.id.ib_main_buy_seed);
-        ib_main_buy_seed.setOnClickListener(this);
+        btn_main_buy_fruit= (Button) parentView.findViewById(R.id.btn_main_buy_fruit);
+        btn_main_buy_fruit.setOnClickListener(this);
+        btn_main_buy_seed= (Button) parentView.findViewById(R.id.btn_main_buy_seed);
+        btn_main_buy_seed.setOnClickListener(this);
         iv_main_seed_image= (ImageView) parentView.findViewById(R.id.iv_main_seed_image);
         iv_main_seed_image.setOnClickListener(this);
         bl_main = (BannerLayout) parentView.findViewById(R.id.bl_main);
@@ -134,10 +135,10 @@ public class MainFragment extends BaseFragment implements View.OnClickListener {
             case R.id.ib_main_find://点击发现跳转到推文界面
                 startActivity(new Intent(getActivity(),DiscoverActivity.class));
                 break;
-            case R.id.ib_main_buy_fruit://点击特价一栏将特价水果加入购物车
+            case R.id.btn_main_buy_fruit://点击特价一栏将特价水果加入购物车
 
                 break;
-            case R.id.ib_main_buy_seed://点击活动一栏将活动种子加入购物车
+            case R.id.btn_main_buy_seed://点击活动一栏将活动种子加入购物车
 
                 break;
             case R.id.iv_main_seed_image://点击果种图片查看果种详情

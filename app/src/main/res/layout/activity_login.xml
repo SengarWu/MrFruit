@@ -23,69 +23,68 @@
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:layout_weight="1">
-        <RelativeLayout
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="48dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:background="@mipmap/login_edit"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_width="match_parent"
-            android:layout_height="48dp">
-            <ImageView
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+             <ImageView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_centerVertical="true"
                 android:src="@mipmap/telnumber"/>
-            <EditText
+
+            <com.xpple.fruits.view.DeletableEditText
                 android:id="@+id/et_login_tel"
-                android:ellipsize="end"
-                android:singleLine="true"
-                android:layout_centerVertical="true"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_marginLeft="40dp"
+                android:singleLine="true"
+                android:paddingLeft="20dp"
+                android:drawableRight="@mipmap/login_delete"
+                android:hint="用户名/手机号"
                 android:background="@color/transpant"
-                android:layout_toLeftOf="@+id/iv_login_delete"
-                android:hint="帐号："
-                android:textColorHint="@color/color_text_black" />
-            <ImageView
-                android:id="@+id/iv_login_delete"
-                android:layout_width="13dp"
-                android:layout_height="13dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:background="@mipmap/login_delete"/>
-        </RelativeLayout>
-        <RelativeLayout
+                android:maxLength="16"
+                android:textSize="@dimen/textSize_editText" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="48dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:background="@mipmap/login_edit"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
             <ImageView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_centerVertical="true"
                 android:src="@mipmap/password"/>
-            <EditText
+            <com.xpple.fruits.view.DeletableEditText
                 android:id="@+id/et_login_password"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:ellipsize="end"
                 android:singleLine="true"
-                android:layout_marginLeft="40dp"
                 android:background="@color/transpant"
                 android:layout_centerVertical="true"
-                android:hint="密码："
-                android:textColorHint="@color/color_text_black"/>
+                android:paddingLeft="20dp"
+                android:drawableRight="@mipmap/login_delete"
+                android:inputType="textPassword"
+                android:hint="密码"
+                android:maxLength="16"
+                android:textSize="@dimen/textSize_editText"/>
 
-        </RelativeLayout>
+        </LinearLayout>
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:layout_marginTop="10dp">
             <TextView
@@ -93,33 +92,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="30dp"
-                android:textSize="@dimen/textSize_btn"
-                android:text="还没有账号？注册！"/>
+                android:textSize="16sp"
+                android:textColor="@color/color_text_blue"
+                android:text="还没有账号？注册>>"/>
         </RelativeLayout>
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center">
             <Button
-                android:id="@+id/bt_login_account"
+                android:id="@+id/btn_login_account"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="60dp"
                 android:background="@drawable/btn_brown_big_style"
                 android:layout_centerInParent="true"
                 android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/textSize_actionbar"
+                android:textColor="@color/base_color_text_white"
+                android:textSize="@dimen/textSize_btn"
                 android:text="登录"/>
             <TextView
                 android:id="@+id/tv_login_update_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:textSize="@dimen/textSize_btn"
+                android:textSize="18sp"
                 android:text="忘记密码不要方！点我！"/>
         </LinearLayout>
 

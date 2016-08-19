@@ -21,7 +21,7 @@
                 android:layout_height="28dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:background="@mipmap/first_page_icon_location1"/>
+                android:background="@mipmap/first_page_icon_location"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -170,7 +170,7 @@
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:background="@mipmap/first_page_ad_left"
-                android:layout_weight="1">
+                android:layout_weight="2">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -183,12 +183,12 @@
                         android:id="@+id/tv_main_fruit_name"
                         android:layout_width="92dp"
                         android:layout_height="32dp"
+                        android:paddingRight="10dp"
                         android:background="@mipmap/first_page_label_left"
                         android:text=" 海南大菠萝"
                         android:textColor="@color/color_text_black"
                         android:textSize="12sp"
-                        android:gravity="center_vertical"
-                        />
+                        android:gravity="center" />
 
                 </RelativeLayout>
             </LinearLayout>
@@ -197,11 +197,11 @@
                 android:layout_height="match_parent"
                 android:gravity="center_horizontal|bottom"
                 android:background="@mipmap/first_page_activity_mid"
-                android:layout_weight="2">
+                android:layout_weight="3">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:layout_marginBottom="25dp">
+                    android:layout_marginBottom="10dp">
                     <ImageView
                         android:id="@+id/iv_main_fruit_image"
                         android:src="@mipmap/first_page_image_bargin_fruit"
@@ -214,10 +214,10 @@
                 android:layout_height="match_parent"
                 android:background="@mipmap/first_page_activity_right"
                 android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="2">
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginTop="15dp"
                     android:orientation="horizontal"
@@ -253,14 +253,17 @@
                 </LinearLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center">
-                    <ImageButton
-                        android:id="@+id/ib_main_buy_fruit"
-                        android:layout_width="65dp"
-                        android:layout_height="30dp"
-                        android:background="@mipmap/first_page_button_clicktobuy"/>
+                    <Button
+                        android:id="@+id/btn_main_buy_fruit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:textSize="12sp"
+                        android:textColor="@color/color_text_black"
+                        android:text="加入购物车"
+                        android:background="@drawable/btn_brown_style"/>
                 </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
@@ -275,7 +278,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:background="@mipmap/first_page_activity2_left"
-                android:layout_weight="1">
+                android:layout_weight="2">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -307,13 +310,14 @@
                         android:layout_height="1dp"
                         android:layout_weight="1"
                         android:gravity="center_horizontal">
-                        <ImageButton
-                            android:id="@+id/ib_main_buy_seed"
-                            android:layout_width="65dp"
+                        <Button
+                            android:id="@+id/btn_main_buy_seed"
+                            android:layout_width="wrap_content"
                             android:layout_height="30dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="10dp"
-                            android:background="@mipmap/first_page_button_clicktobuy"/>
+                            android:textSize="12sp"
+                            android:text="点击购买"
+                            android:textColor="@color/color_text_black"
+                            android:background="@drawable/btn_brown_style"/>
                     </RelativeLayout>
 
             </LinearLayout>
@@ -321,11 +325,11 @@
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:background="@mipmap/first_page_activity2_mid"
-                android:layout_weight="2">
+                android:layout_weight="3"
+                android:gravity="center">
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_gravity="center_vertical">
+                    android:layout_height="70dp">
                     <ImageView
                         android:id="@+id/iv_main_seed_image"
                         android:src="@mipmap/first_page_image_bargin_fruit"
@@ -338,7 +342,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="5dp"
                 android:background="@mipmap/first_page_ad_right"
-                android:layout_weight="1">
+                android:layout_weight="2">
                 <RelativeLayout
                     android:layout_width="118dp"
                     android:layout_height="match_parent"
@@ -350,6 +354,7 @@
                         android:id="@+id/tv_main_activity_seed"
                         android:layout_width="92dp"
                         android:layout_height="32dp"
+                        android:paddingLeft="10dp"
                         android:background="@mipmap/first_page_label_right"
                         android:text=" 万圣节果种"
                         android:textColor="@color/color_text_black"
