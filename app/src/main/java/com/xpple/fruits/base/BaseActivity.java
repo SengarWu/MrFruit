@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 
@@ -17,8 +16,9 @@ public class BaseActivity extends FragmentActivity {
     protected Context mContext;
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mContext = this;
         //禁止横屏
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
@@ -38,4 +38,5 @@ public class BaseActivity extends FragmentActivity {
     protected   <T extends View> T $(int resId) {
         return (T) super.findViewById(resId);
     }
+
 }

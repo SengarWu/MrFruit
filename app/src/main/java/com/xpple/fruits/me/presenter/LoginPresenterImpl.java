@@ -19,12 +19,12 @@ public class LoginPresenterImpl implements LoginPresenter,OnLoginFinishedListene
     }
 
     @Override
-    public String validateCredentials(String username, String password) {
+    public void validateCredentials(String username, String password) {
         if (loginView != null)
         {
             loginView.showProgress();
         }
-        return loginModel.login(username,password,this);
+        loginModel.login(username,password,this);
     }
 
     @Override
@@ -32,18 +32,19 @@ public class LoginPresenterImpl implements LoginPresenter,OnLoginFinishedListene
         loginView = null;
     }
 
-
     @Override
-    public void onError() {
+    public void onError(String s) {
         if (loginView != null)
         {
-            loginView.loginFail();
+            loginView.hideProgress();
+            loginView.loginFail(s);
         }
     }
 
     @Override
     public void onSuccess() {
         if (loginView != null) {
+            loginView.hideProgress();
             loginView.loginSuccess();
         }
     }

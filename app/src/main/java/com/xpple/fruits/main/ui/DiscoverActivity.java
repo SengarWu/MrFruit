@@ -9,26 +9,39 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
+import com.jude.utils.JUtils;
 import com.xpple.fruits.R;
 import com.xpple.fruits.base.BaseActivity;
-import com.xpple.fruits.bean.DiscoverEntity;
 import com.xpple.fruits.main.adapter.DiscoverAdapter;
+import com.xpple.fruits.main.model.bean.Article;
+import com.xpple.fruits.main.model.bean.ArticleResult;
+import com.xpple.fruits.main.presenter.DiscoverPresenter;
+import com.xpple.fruits.main.presenter.DiscoverPresenterImpl;
+import com.xpple.fruits.main.view.DiscoverView;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class DiscoverActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener {
+public class DiscoverActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener, DiscoverView, BaseQuickAdapter.RequestLoadMoreListener {
 
     private ImageButton ib_back;
     private TextView tv_title;
     private SwipeRefreshLayout srl_discover;
     private RecyclerView rv_discover;
 
-    private List<DiscoverEntity> discovers;
+    private List<Article> articles;
     private DiscoverAdapter adapter;
+
+    private DiscoverPresenter presenter;
+    private ProgressBar progressBar;
+
+    private int index = 1;
+    private final int SIZE = 20;
+    private int dataCount = 0;
 
     private final int REFRESS_DELAY = 1001;
     private Handler handler = new Handler()
@@ -38,8 +51,7 @@ public class DiscoverActivity extends BaseActivity implements SwipeRefreshLayout
             switch (msg.what)
             {
                 case REFRESS_DELAY:
-                    initData();
-                    setupView();
+                    presenter.getList(index,SIZE);
                     srl_discover.setRefreshing(false);
                     break;
             }
@@ -51,40 +63,27 @@ public class DiscoverActivity extends BaseActivity implements SwipeRefreshLayout
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_discover);
         initView();
-        initData();
-        setupView();
+        presenter = new DiscoverPresenterImpl(this);
+        presenter.getList(index,SIZE);
     }
 
     private void setupView() {
-        adapter = new DiscoverAdapter(discovers);
+        adapter = new DiscoverAdapter(articles);
         //设置动画效果
         adapter.openLoadAnimation();
         //加载更多
-        adapter.openLoadMore(20,true);
+        adapter.setOnLoadMoreListener(this);
+        adapter.openLoadMore(20);
         rv_discover.setAdapter(adapter);
-        adapter.setOnRecyclerViewItemClickListener(new BaseQuickAdapter.OnRecyclerViewItemClickListener() {
+        rv_discover.addOnItemTouchListener(new OnItemClickListener() {
             @Override
-            public void onItemClick(View view, int position) {
-                DiscoverEntity discover = discovers.get(position);
-                Intent intent = new Intent(DiscoverActivity.this,DiscoverDetailActivity.class);
-                intent.putExtra("link",discover.link);
+            public void SimpleOnItemClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
+                Article article = (Article) baseQuickAdapter.getData().get(position);
+                Intent intent = new Intent(DiscoverActivity.this, DiscoverDetailActivity.class);
+                intent.putExtra("link", article.getLink());
                 startActivity(intent);
             }
         });
-    }
-
-    private void initData() {
-        if (discovers != null)
-        {
-            discovers.clear();
-        }
-        discovers = new ArrayList<DiscoverEntity>();
-        for (int i = 0; i < 10; i++) {
-            DiscoverEntity discover = new DiscoverEntity();
-            discover.title = "【甜哦】攀枝花吉禄芒果5斤 新鲜水果紫芒果 24元 ";
-            discover.link = "http://mp.weixin.qq.com/s?__biz=MzIzNjQwNTI1OA==&mid=2247483707&idx=1&sn=59cab13b1d00290912c86e9ac47f93f1&scene=0#wechat_redirect";
-            discovers.add(discover);
-        }
     }
 
     private void initView() {
@@ -102,10 +101,60 @@ public class DiscoverActivity extends BaseActivity implements SwipeRefreshLayout
         srl_discover.setOnRefreshListener(this);
         rv_discover = $(R.id.rv_discover);
         rv_discover.setLayoutManager(new LinearLayoutManager(this));
+        progressBar = new ProgressBar(this);
     }
 
     @Override
     public void onRefresh() {
         handler.sendEmptyMessageDelayed(REFRESS_DELAY,1000);
+    }
+
+    @Override
+    public void showProgress() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideProgress() {
+        progressBar.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void getListSuccess(ArticleResult result) {
+        if(index == 0 || index == 1)
+        {
+            //首次请求
+            articles = result.getArticles();
+            dataCount = result.getDataCount();
+            setupView();
+        }
+        else
+        {
+            adapter.addData(result.getArticles());
+        }
+    }
+
+    @Override
+    public void getListFail(String message) {
+        JUtils.Toast(message);
+    }
+
+    @Override
+    public void onLoadMoreRequested() {
+        rv_discover.post(new Runnable() {
+            @Override
+            public void run() {
+                if (adapter.getData().size() >= dataCount)
+                {
+                    //加载完毕
+                    adapter.loadComplete();
+                }
+                else
+                {
+                    index++;
+                    presenter.getList(index,SIZE);
+                }
+            }
+        });
     }
 }

@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.xpple.fruits.R;
 import com.xpple.fruits.base.BaseFragment;
+import com.xpple.fruits.order.ui.MyOrderActivity;
 
 public class MeFragment extends BaseFragment implements View.OnClickListener {
 

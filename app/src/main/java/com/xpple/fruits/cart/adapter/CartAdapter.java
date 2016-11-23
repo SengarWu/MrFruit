@@ -1,10 +1,12 @@
 package com.xpple.fruits.cart.adapter;
 
+import android.text.TextUtils;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.xpple.fruits.R;
-import com.xpple.fruits.bean.CartEntity;
+import com.xpple.fruits.cart.model.bean.Cart;
 
 import java.text.DecimalFormat;
 import java.util.List;
@@ -12,44 +14,45 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/7/2.
  */
-public class CartAdapter extends BaseQuickAdapter<CartEntity> {
+public class CartAdapter extends BaseQuickAdapter<Cart,BaseViewHolder> {
 
     private DecimalFormat df   = new DecimalFormat("######0.0");
 
-    public CartAdapter(List<CartEntity> data) {
+    public CartAdapter(List<Cart> data) {
         super(R.layout.cart_item, data);
     }
 
 
     @Override
-    protected void convert(BaseViewHolder baseViewHolder, CartEntity cart) {
-        baseViewHolder.setText(R.id.tv_cart_fruit_name,cart.fruit_name)
-                .setChecked(R.id.cb_cart_check,cart.ischeck)
-                .setText(R.id.tv_cart_price,df.format(cart.fruit_price))
-                .setText(R.id.tv_cart_unit,cart.fruit_unit)
-                .setText(R.id.tv_cart_num,String.valueOf(cart.number))
-                .setText(R.id.tv_cart_sum,df.format(cart.sum));
-
-        SimpleDraweeView draweeView = baseViewHolder.getView(R.id.iv_cart_picture);
-        //测试图片地址
-        draweeView.setImageURI("http://b.hiphotos.baidu.com/image/h%3D200/sign=8e8564a10c46f21fd6345953c6256b31/00e93901213fb80e22a34b8d30d12f2eb938947d.jpg");
-
-        baseViewHolder.setOnClickListener(R.id.ib_cart_add,new OnItemChildClickListener())
-                .setOnClickListener(R.id.ib_cart_sub,new OnItemChildClickListener())
-                .setOnClickListener(R.id.cb_cart_check,new OnItemChildClickListener());
-
-
-        /*if (TextUtils.isEmpty(cart.fruit_Image))
+    protected void convert(BaseViewHolder baseViewHolder, Cart cart) {
+        double price = 0;
+        if (cart.getDiscount() >= 0 && cart.getDiscount() < cart.getPrice())
         {
-            //显示默认图片
-            baseViewHolder.setImageResource(R.id.iv_cart_picture,R.mipmap.seeds_banana2);
+            price = cart.getDiscount();
         }
         else
         {
-            SimpleDraweeView draweeView = baseViewHolder.getView(R.id.iv_cart_picture);
-            //测试图片地址
+            price = cart.getPrice();
+        }
+        baseViewHolder.setText(R.id.tv_cart_fruit_name,cart.getName())
+                .setChecked(R.id.cb_cart_check,cart.getIscheck())
+                .setText(R.id.tv_cart_price,df.format(price))
+                .setText(R.id.tv_cart_unit,cart.getUnit())
+                .setText(R.id.tv_cart_num,String.valueOf(cart.getNum()))
+                .setText(R.id.tv_cart_sum,df.format(cart.getSum()))
+                .addOnClickListener(R.id.ib_cart_add)
+                .addOnClickListener(R.id.ib_cart_sub)
+                .addOnClickListener(R.id.cb_cart_check);
+
+        SimpleDraweeView draweeView = baseViewHolder.getView(R.id.iv_cart_picture);
+        if (TextUtils.isEmpty(cart.getPicture()))
+        {
+            //默认图片
             draweeView.setImageURI("http://b.hiphotos.baidu.com/image/h%3D200/sign=8e8564a10c46f21fd6345953c6256b31/00e93901213fb80e22a34b8d30d12f2eb938947d.jpg");
-            //draweeView.setImageURI(cart.fruit_Image);
-        }*/
+        }
+        else
+        {
+            draweeView.setImageURI(cart.getPicture());
+        }
     }
 }

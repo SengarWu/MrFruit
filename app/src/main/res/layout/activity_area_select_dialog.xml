@@ -6,69 +6,14 @@
     tools:context="com.xpple.fruits.main.ui.AreaPopupWindow"
     android:background="@color/base_color_text_white">
 
-    <LinearLayout
-        android:id="@+id/pop_layout_main"
-        android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:orientation="horizontal"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:paddingTop="20dp">
+   <android.support.v7.widget.RecyclerView
+       android:id="@+id/rv_main"
+       android:layout_width="match_parent"
+       android:layout_height="170dp"
+       android:layout_marginTop="10dp"
+       android:paddingLeft="40dp">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
-
-            <Button
-                android:id="@+id/btn_area1"
-                android:layout_width="130dp"
-                android:layout_height="45dp"
-                android:textSize="16sp"
-                android:text="天津工业大学"
-                android:background="@drawable/selector_area"/>
-
-            <Button
-                android:id="@+id/btn_area2"
-                android:layout_width="130dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="20dp"
-                android:textSize="16sp"
-                android:text="天津师范大学"
-                android:background="@drawable/selector_area"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
-
-            <Button
-                android:id="@+id/btn_area3"
-                android:layout_width="130dp"
-                android:layout_height="45dp"
-                android:textSize="16sp"
-                android:text="天津理工大学"
-                android:background="@drawable/selector_area"/>
-
-            <Button
-                android:id="@+id/btn_area4"
-                android:layout_width="130dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="20dp"
-                android:textSize="16sp"
-                android:text="天津软件学院"
-                android:background="@drawable/selector_area"/>
-
-
-        </LinearLayout>
-
-    </LinearLayout>
+   </android.support.v7.widget.RecyclerView>
 
     <TextView
         android:layout_width="wrap_content"

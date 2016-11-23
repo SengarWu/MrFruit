@@ -57,7 +57,7 @@
                 android:textColor="@color/account_pay"
                 android:text="10"/>
             <Button
-                android:id="@+id/account_pay"
+                android:id="@+id/btn_account_pay"
                 android:layout_width="112dp"
                 android:layout_height="match_parent"
                 android:background="@mipmap/btn_settlement"

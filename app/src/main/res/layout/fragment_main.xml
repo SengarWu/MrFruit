@@ -13,8 +13,7 @@
             android:id="@+id/rl_main_top"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:background="@color/title"
-            android:layout_weight="3">
+            android:background="@color/title">
             <ImageButton
                 android:id="@+id/ib_main_select_shop"
                 android:layout_width="28dp"
@@ -31,339 +30,365 @@
                 android:gravity="center"/>
         </RelativeLayout>
 
-
-        <RelativeLayout
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_weight="8">
+            android:layout_height="match_parent">
 
-            <com.xpple.fruits.view.BannerLayout
-                android:id="@+id/bl_main"
+            <LinearLayout
+                android:id="@+id/ll_main"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            </com.xpple.fruits.view.BannerLayout>
-
-        </RelativeLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:orientation="horizontal"
-            android:layout_weight="2">
-            <RelativeLayout
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:gravity="center|right">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="--------"
-                    android:textColor="@color/viewColor2"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/tv_main_area"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="天津工业大学"
-                    android:textSize="14sp"
-                    android:textColor="@color/viewColor2"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:gravity="center|left">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="--------"
-                    android:textColor="@color/viewColor2"/>
-
-            </RelativeLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="86dp"
-            android:orientation="horizontal"
-            android:background="@mipmap/first_page_background_top_icon"
-            android:layout_weight="5">
-            <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/ib_main_fruit_buy"
-                    android:layout_width="54dp"
-                    android:layout_height="49dp"
-                    android:background="@mipmap/first_page_icon_buy_fruit"
-                    android:layout_gravity="center"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="16dp"
-                    android:gravity="center"
-                    android:text="水果购买"
-                    android:layout_marginTop="2dp"
-                    android:textSize="12sp"
-                    android:textColor="@color/color_text_black"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:gravity="center">
-                <ImageButton
-                    android:id="@+id/ib_main_orchard"
-                    android:layout_width="54dp"
-                    android:layout_height="49dp"
-                    android:background="@mipmap/first_page_icon_orchard_unchecked"
-                    android:layout_gravity="center"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="16dp"
-                    android:gravity="center"
-                    android:text="趣味果园"
-                    android:layout_marginTop="2dp"
-                    android:textSize="12sp"
-                    android:textColor="@color/color_text_black"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:gravity="center">
-                <ImageButton
-                    android:id="@+id/ib_main_find"
-                    android:layout_width="54dp"
-                    android:layout_height="49dp"
-                    android:background="@mipmap/first_page_icon_my_discovery"
-                    android:layout_gravity="center"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="16dp"
-                    android:gravity="center"
-                    android:text="我的发现"
-                    android:layout_marginTop="2dp"
-                    android:textSize="12sp"
-                    android:textColor="@color/color_text_black"/>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="129dp"
-            android:layout_weight="7"
-            android:orientation="horizontal">
-            <LinearLayout
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="@mipmap/first_page_ad_left"
-                android:layout_weight="2">
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginTop="50dp">
+                    android:layout_height="0dp"
+                    android:layout_weight="4">
 
-                    <TextView
-                        android:id="@+id/tv_main_fruit_name"
-                        android:layout_width="92dp"
-                        android:layout_height="32dp"
-                        android:paddingRight="10dp"
-                        android:background="@mipmap/first_page_label_left"
-                        android:text=" 海南大菠萝"
-                        android:textColor="@color/color_text_black"
-                        android:textSize="12sp"
-                        android:gravity="center" />
-
-                </RelativeLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal|bottom"
-                android:background="@mipmap/first_page_activity_mid"
-                android:layout_weight="3">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_marginBottom="10dp">
-                    <ImageView
-                        android:id="@+id/iv_main_fruit_image"
-                        android:src="@mipmap/first_page_image_bargin_fruit"
+                    <com.xpple.fruits.view.BannerLayout
+                        android:id="@+id/bl_main"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent">
+
+                    </com.xpple.fruits.view.BannerLayout>
+
                 </RelativeLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="@mipmap/first_page_activity_right"
-                android:orientation="vertical"
-                android:layout_weight="2">
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginTop="15dp"
+                    android:layout_height="0dp"
                     android:orientation="horizontal"
-                    android:gravity="bottom|center_horizontal">
-                    <TextView
-                        android:id="@+id/tv_main_bargain_price"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="12"
-                        android:textSize="16sp"
-                        android:textColor="@color/base_color_red"
-                        android:layout_marginLeft="14dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="元/"
-                        android:textSize="12sp"
-                        android:textColor="@color/color_text_black"
-                        />
-                    <TextView
-                        android:id="@+id/tv_main_weight"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="500"
-                        android:textSize="12sp"
-                        android:textColor="@color/color_text_black"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="克"
-                        android:textSize="12sp"
-                        android:textColor="@color/color_text_black"/>
+                    android:layout_weight="0.5">
+                    <RelativeLayout
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center|right">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="--------"
+                            android:textColor="@color/viewColor2"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tv_main_area"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="天津工业大学"
+                            android:textSize="14sp"
+                            android:textColor="@color/viewColor2"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center|left">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="--------"
+                            android:textColor="@color/viewColor2"/>
+
+                    </RelativeLayout>
                 </LinearLayout>
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center">
-                    <Button
-                        android:id="@+id/btn_main_buy_fruit"
-                        android:layout_width="wrap_content"
-                        android:layout_height="35dp"
-                        android:textSize="12sp"
-                        android:textColor="@color/color_text_black"
-                        android:text="加入购物车"
-                        android:background="@drawable/btn_brown_style"/>
-                </RelativeLayout>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="129dp"
-            android:orientation="horizontal"
-            android:paddingLeft="4dp"
-            android:layout_weight="9">
-            <LinearLayout
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:background="@mipmap/first_page_activity2_left"
-                android:layout_weight="2">
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:orientation="horizontal"
+                    android:background="@mipmap/first_page_background_top_icon">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
                         android:layout_weight="1"
-                        android:orientation="horizontal"
-                        android:paddingBottom="10dp"
-                        android:paddingRight="10dp"
-                        android:gravity="bottom|center_horizontal">
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:id="@+id/ib_main_fruit_buy"
+                            android:layout_width="54dp"
+                            android:layout_height="49dp"
+                            android:background="@mipmap/first_page_icon_buy_fruit"
+                            android:layout_gravity="center"/>
                         <TextView
-                            android:id="@+id/tv_main_get_number"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="3"
-                            android:textSize="16sp"
-                            android:textColor="@color/base_color_red"
-                            android:layout_marginLeft="20dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Get币"
+                            android:layout_width="match_parent"
+                            android:layout_height="16dp"
+                            android:gravity="center"
+                            android:text="水果购买"
+                            android:layout_marginTop="2dp"
                             android:textSize="12sp"
                             android:textColor="@color/color_text_black"
                             />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:gravity="center">
+                        <ImageButton
+                            android:id="@+id/ib_main_orchard"
+                            android:layout_width="54dp"
+                            android:layout_height="49dp"
+                            android:background="@mipmap/first_page_icon_orchard_unchecked"
+                            android:layout_gravity="center"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="16dp"
+                            android:gravity="center"
+                            android:text="趣味果园"
+                            android:layout_marginTop="2dp"
+                            android:textSize="12sp"
+                            android:textColor="@color/color_text_black"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:gravity="center">
+                        <ImageButton
+                            android:id="@+id/ib_main_find"
+                            android:layout_width="54dp"
+                            android:layout_height="49dp"
+                            android:background="@mipmap/first_page_icon_my_discovery"
+                            android:layout_gravity="center"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="16dp"
+                            android:gravity="center"
+                            android:text="我的发现"
+                            android:layout_marginTop="2dp"
+                            android:textSize="12sp"
+                            android:textColor="@color/color_text_black"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@mipmap/first_page_ad_left"
+                        android:layout_weight="2">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_marginTop="50dp">
+
+                            <TextView
+                                android:id="@+id/tv_main_fruit_name"
+                                android:layout_width="92dp"
+                                android:layout_height="32dp"
+                                android:paddingRight="10dp"
+                                android:background="@mipmap/first_page_label_left"
+                                android:text=" 海南大菠萝"
+                                android:textColor="@color/color_text_black"
+                                android:textSize="12sp"
+                                android:gravity="center" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal|bottom"
+                        android:background="@mipmap/first_page_activity_mid"
+                        android:layout_weight="3">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="20dp">
+
+                            <ImageView
+                                android:id="@+id/iv_main_fruit_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/banana"
+                                android:layout_marginTop="30dp"
+                                android:scaleType="fitCenter"
+                                android:layout_alignParentBottom="true"/>
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@mipmap/first_page_activity_right"
+                        android:orientation="vertical"
+                        android:layout_weight="2">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginTop="15dp"
+                            android:orientation="horizontal"
+                            android:gravity="bottom|center_horizontal">
+                            <TextView
+                                android:id="@+id/tv_main_fruit_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="12"
+                                android:textSize="16sp"
+                                android:textColor="@color/base_color_red"
+                                android:layout_marginLeft="14dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="元/"
+                                android:textSize="12sp"
+                                android:textColor="@color/color_text_black"
+                                />
+                            <TextView
+                                android:id="@+id/tv_main_fruit_unit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="500"
+                                android:textSize="12sp"
+                                android:textColor="@color/color_text_black"/>
+                        </LinearLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center">
+                            <Button
+                                android:id="@+id/btn_main_buy_fruit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:textSize="12sp"
+                                android:textColor="@color/color_text_black"
+                                android:text="加入购物车"
+                                android:background="@drawable/btn_brown_style"/>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"
+                    android:orientation="horizontal"
+                    android:paddingLeft="4dp">
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@mipmap/first_page_activity2_left"
+                        android:layout_weight="2">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:paddingBottom="10dp"
+                            android:paddingRight="10dp"
+                            android:gravity="bottom|center_horizontal">
+                            <TextView
+                                android:id="@+id/tv_main_seed_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0.3"
+                                android:textSize="16sp"
+                                android:textColor="@color/base_color_red"
+                                android:layout_marginLeft="20dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="元/个"
+                                android:textSize="12sp"
+                                android:textColor="@color/color_text_black" />
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal">
+                            <Button
+                                android:id="@+id/btn_main_buy_seed"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:textSize="12sp"
+                                android:text="点击购买"
+                                android:textColor="@color/color_text_black"
+                                android:background="@drawable/btn_brown_style"/>
+                        </RelativeLayout>
 
                     </LinearLayout>
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_weight="1"
-                        android:gravity="center_horizontal">
-                        <Button
-                            android:id="@+id/btn_main_buy_seed"
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:textSize="12sp"
-                            android:text="点击购买"
-                            android:textColor="@color/color_text_black"
-                            android:background="@drawable/btn_brown_style"/>
-                    </RelativeLayout>
 
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@mipmap/first_page_activity2_mid"
+                        android:layout_weight="3"
+                        android:gravity="center">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="20dp">
+                            <com.facebook.drawee.view.SimpleDraweeView
+                                android:id="@+id/iv_main_seed_image"
+                                android:src="@mipmap/first_page_image_bargin_fruit"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitCenter"
+                                android:layout_marginTop="30dp"/>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="5dp"
+                        android:background="@mipmap/first_page_ad_right"
+                        android:layout_weight="2">
+                        <RelativeLayout
+                            android:layout_width="118dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_marginTop="20dp">
+
+                            <TextView
+                                android:id="@+id/tv_main_seed_name"
+                                android:layout_width="92dp"
+                                android:layout_height="32dp"
+                                android:paddingLeft="10dp"
+                                android:background="@mipmap/first_page_label_right"
+                                android:text=" 万圣节果种"
+                                android:textColor="@color/color_text_black"
+                                android:textSize="12sp"
+                                android:gravity="center" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="1dp"
+
+            <ImageView
+                android:id="@+id/iv_refresh"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@mipmap/first_page_activity2_mid"
-                android:layout_weight="3"
-                android:gravity="center">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp">
-                    <ImageView
-                        android:id="@+id/iv_main_seed_image"
-                        android:src="@mipmap/first_page_image_bargin_fruit"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </RelativeLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:layout_marginRight="5dp"
-                android:background="@mipmap/first_page_ad_right"
-                android:layout_weight="2">
-                <RelativeLayout
-                    android:layout_width="118dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginTop="20dp">
+                android:visibility="gone"
+                android:src="@mipmap/load_error"/>
 
-                    <TextView
-                        android:id="@+id/tv_main_activity_seed"
-                        android:layout_width="92dp"
-                        android:layout_height="32dp"
-                        android:paddingLeft="10dp"
-                        android:background="@mipmap/first_page_label_right"
-                        android:text=" 万圣节果种"
-                        android:textColor="@color/color_text_black"
-                        android:textSize="12sp"
-                        android:gravity="center" />
-
-                </RelativeLayout>
-            </LinearLayout>
-        </LinearLayout>
+        </FrameLayout>
     </LinearLayout>
 
 </FrameLayout>

@@ -6,9 +6,11 @@ import com.xpple.fruits.me.model.RegisterModelImpl;
 import com.xpple.fruits.me.view.RegisterView;
 
 /**
- * Created by Administrator on 2016/8/19.
+ * Created by Administrator on 2016/11/1.
  */
+
 public class RegisterPresenterImpl implements RegisterPresenter,OnRegisterFinishedListener {
+
     private RegisterView registerView;
     private RegisterModel registerModel;
 
@@ -19,33 +21,34 @@ public class RegisterPresenterImpl implements RegisterPresenter,OnRegisterFinish
     }
 
     @Override
-    public void onError() {
-        if (registerView != null)
-        {
-            registerView.registerFail();
-        }
-    }
-
-    @Override
-    public void onSuccess() {
-        if (registerView != null)
-        {
-            registerView.registerSuccess();
-        }
-    }
-
-
-    @Override
-    public String onRegister(String username, String phone, String password, String code) {
+    public void register(String name, String phone, String pass,String code) {
         if (registerView != null)
         {
             registerView.showProgress();
         }
-        return registerModel.register(username,phone,password,code,this);
+        registerModel.register(name,phone,pass,code,this);
     }
 
     @Override
     public void onDestroy() {
         registerView = null;
+    }
+
+    @Override
+    public void onError(String message) {
+        if (registerView != null)
+        {
+            registerView.hideProgress();
+            registerView.registerFail(message);
+        }
+    }
+
+    @Override
+    public void onSuccess(String message) {
+        if (registerView != null)
+        {
+            registerView.hideProgress();
+            registerView.registerSuccess(message);
+        }
     }
 }

@@ -20,7 +20,7 @@
             android:text="订单编号："/>
 
         <TextView
-            android:id="@+id/tv_order_detail_id"
+            android:id="@+id/tv_order_detail_fruit_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -33,7 +33,7 @@
             android:gravity="right|center_vertical">
 
             <TextView
-                android:id="@+id/tv_order_detail_state"
+                android:id="@+id/tv_order_detail_fruit_state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -42,7 +42,7 @@
                 android:text="已取消"/>
 
             <ImageButton
-                android:id="@+id/ib_order_detail_close"
+                android:id="@+id/ib_order_detail_fruit_close"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@mipmap/icon_close"
@@ -73,7 +73,7 @@
             android:text="支付方式："/>
 
         <TextView
-            android:id="@+id/tv_order_detail_payment_method"
+            android:id="@+id/tv_order_detail_fruit_payment_method"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/textSize_textView"
@@ -93,7 +93,7 @@
                 android:text="下单时间："/>
 
             <TextView
-                android:id="@+id/tv_order_detail_time"
+                android:id="@+id/tv_order_detail_fruit_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/textSize_textView"
@@ -136,7 +136,7 @@
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_order_detail"
+        android:id="@+id/rv_order_detail_fruit"
         android:layout_width="match_parent"
         android:layout_height="120dp">
 
@@ -161,11 +161,12 @@
             android:gravity="right">
 
             <TextView
-                android:id="@+id/tv_order_detail_total"
+                android:id="@+id/tv_order_detail_fruit_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="10.0"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -223,7 +224,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_order_detail_receiver"
+                android:id="@+id/tv_order_detail_fruit_receiver"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -231,7 +232,7 @@
                 android:text="吴承佳"/>
 
             <TextView
-                android:id="@+id/tv_order_detail_phone"
+                android:id="@+id/tv_order_detail_fruit_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -251,7 +252,7 @@
                     android:text="【"/>
 
                 <TextView
-                    android:id="@+id/tv_order_detail_area"
+                    android:id="@+id/tv_order_detail_fruit_area"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/textSize_textView"
@@ -264,7 +265,7 @@
                     android:text="】"/>
 
                 <TextView
-                    android:id="@+id/tv_order_detail_address"
+                    android:id="@+id/tv_order_detail_fruit_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/textSize_textView"
@@ -283,7 +284,7 @@
         android:layout_marginTop="10dp">
 
         <Button
-            android:id="@+id/btn_order_detail1"
+            android:id="@+id/btn_order_detail_fruit1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -293,7 +294,7 @@
             android:text="取消订单"/>
 
         <Button
-            android:id="@+id/btn_order_detail2"
+            android:id="@+id/btn_order_detail_fruit2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="30dp"

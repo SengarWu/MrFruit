@@ -10,25 +10,40 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.xpple.fruits.R;
 import com.xpple.fruits.base.BaseFragment;
-import com.xpple.fruits.bean.SeedEntity;
 import com.xpple.fruits.shop.adapter.SeedAdapter;
+import com.xpple.fruits.shop.model.bean.SeedResult;
+import com.xpple.fruits.shop.model.bean.Seeds;
+import com.xpple.fruits.shop.presenter.SeedPresenter;
+import com.xpple.fruits.shop.presenter.SeedPresenterImpl;
+import com.xpple.fruits.shop.view.SeedView;
+import com.xpple.fruits.utils.SharedPreferencesHelper;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class SeedFragment extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener {
+public class SeedFragment extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener,SeedView, BaseQuickAdapter.RequestLoadMoreListener {
 
     private View parentView;
 
     private SeedAdapter adapter;
-    private List<SeedEntity> seeds;
+    private List<Seeds> seeds;
 
     private RecyclerView rv_seed;
     private SwipeRefreshLayout srl_seed;
+    private ProgressBar progressBar;
+
+    private SeedPresenter presenter;
+
+    private int userId = 0;
+    private int areaId = 0;
+    private int index = 1;
+    private final int SIZE = 20;
+    private int dataCount = 0;
 
     private final int REFRESH_DELAY = 1001;
     private Handler handler = new Handler()
@@ -52,8 +67,8 @@ public class SeedFragment extends BaseFragment implements SwipeRefreshLayout.OnR
         // Inflate the layout for this fragment
         parentView = inflater.inflate(R.layout.fragment_seed, container, false);
         initView();
+        presenter = new SeedPresenterImpl(this);
         initData();
-        setupView();
         return parentView;
     }
 
@@ -62,42 +77,32 @@ public class SeedFragment extends BaseFragment implements SwipeRefreshLayout.OnR
         //设置动画效果
         adapter.openLoadAnimation();
         //加载更多
-        adapter.openLoadMore(20,true);
+        adapter.setOnLoadMoreListener(this);
+        adapter.openLoadMore(20);
         rv_seed.setAdapter(adapter);
-        adapter.setOnRecyclerViewItemClickListener(new BaseQuickAdapter.OnRecyclerViewItemClickListener() {
+        rv_seed.addOnItemTouchListener(new OnItemClickListener() {
             @Override
-            public void onItemClick(View view, int position) {
-                SeedEntity seed = seeds.get(position);
+            public void SimpleOnItemClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
+                Seeds seed = seeds.get(position);
                 Intent intent = new Intent(getActivity(), SeedDetailActivity.class);
-                intent.putExtra("seedId",seed.id);
+                intent.putExtra("seedId",seed.Id);
                 startActivity(intent);
             }
         });
     }
 
     private void initData() {
+
+        //获取本地数据
+        SharedPreferencesHelper helper = new SharedPreferencesHelper(getActivity());
+        userId = helper.getUserId();
+        areaId = helper.getUserAreaId();
+        //首次网络请求
+        presenter.loadData(userId,areaId,index,SIZE);
+
         if (seeds != null)
         {
             seeds.clear();
-        }
-        seeds = new ArrayList<SeedEntity>();
-        for (int i = 0; i < 20; i++) {
-            SeedEntity seed = new SeedEntity();
-            seed.seed_name = "柠檬种子";
-            seed.seed_price = 0.2;
-            if (i > 10)
-            {
-                seed.seed_state = "未解锁";
-            }
-            else if (i > 5)
-            {
-                seed.seed_state = "已解锁";
-            }
-            else
-            {
-                seed.seed_state = "免费";
-            }
-            seeds.add(seed);
         }
     }
 
@@ -107,11 +112,57 @@ public class SeedFragment extends BaseFragment implements SwipeRefreshLayout.OnR
         srl_seed = (SwipeRefreshLayout) parentView.findViewById(R.id.srl_seed);
         srl_seed.setColorSchemeResources(R.color.base_color_yellow,R.color.base_color_brown);
         srl_seed.setOnRefreshListener(this);
+        progressBar = new ProgressBar(getActivity());
     }
 
 
     @Override
     public void onRefresh() {
         handler.sendEmptyMessageDelayed(REFRESH_DELAY,1000);
+    }
+
+    @Override
+    public void showProgress() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideProgress() {
+        progressBar.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void LoadSuccess(SeedResult result) {
+        if (seeds != null)
+        {
+            seeds.clear();
+        }
+        seeds = result.getSeeds();
+        dataCount = result.getDataCount();
+        setupView();
+    }
+
+    @Override
+    public void LoadFail(String s) {
+
+    }
+
+    @Override
+    public void onLoadMoreRequested() {
+        rv_seed.post(new Runnable() {
+            @Override
+            public void run() {
+                if (adapter.getData().size() >= dataCount)
+                {
+                    adapter.loadComplete();
+                }
+                else
+                {
+                    index++;
+                    presenter.loadData(userId,areaId,index,SIZE);
+                    adapter.addData(seeds);
+                }
+            }
+        });
     }
 }

@@ -1,33 +1,32 @@
 package com.xpple.fruits.me.model;
 
-import android.os.Handler;
+import com.xpple.fruits.me.model.server.UserService;
+
+import rx.Subscriber;
 
 /**
- * Created by Administrator on 2016/8/19.
+ * Created by Administrator on 2016/11/1.
  */
-public class RegisterModelImpl implements RegisterModel {
 
-    private String message = "网络访问出错！";
+//只与数据访问有关
+public class RegisterModelImpl implements RegisterModel{
 
     @Override
-    public String register(final String username, final String phone, final String password, final String code, final OnRegisterFinishedListener listener) {
-        new Handler().postDelayed(new Runnable() {
+    public void register(String name, String phone, String pass,String code, final OnRegisterFinishedListener listener) {
+        UserService.getInstance().register(new Subscriber<String>() {
             @Override
-            public void run() {
-                //模拟网络访问
-                boolean net = true;
-                if (net)
-                {
-                    message = "网络消息：登陆成功！";
-                    listener.onSuccess();
-                }
-                else
-                {
-                    message = "网络消息：登陆失败！";
-                    listener.onError();
-                }
+            public void onCompleted() {
             }
-        },2000);
-        return message;
+
+            @Override
+            public void onError(Throwable e) {
+                listener.onError(e.getMessage());
+            }
+
+            @Override
+            public void onNext(String s) {
+                listener.onSuccess(s);
+            }
+        }, name, phone, pass,code);
     }
 }

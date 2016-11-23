@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.xpple.fruits.R;
 import com.xpple.fruits.base.BaseActivity;
 import com.xpple.fruits.cart.ui.AccountActivity;
+import com.xpple.fruits.utils.SharedPreferencesHelper;
 
 public class AddressActivity extends BaseActivity implements View.OnClickListener {
     private ImageButton ib_back;
@@ -27,6 +28,15 @@ public class AddressActivity extends BaseActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_address);
         initView();
+        setupView();
+    }
+
+    private void setupView() {
+        SharedPreferencesHelper helper = new SharedPreferencesHelper(this);
+        et_address_name.setText(helper.getUserReceiver());
+        et_address_tel.setText(helper.getUserReceiverPhone());
+        et_address_home.setText(helper.getUserReceiverArea());
+        et_address_detail.setText(helper.getUserReceiverAddress());
     }
 
     private void initView() {
@@ -53,7 +63,14 @@ public class AddressActivity extends BaseActivity implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bt_address_out://点击确认按钮
-                startActivity(new Intent(AddressActivity.this,AccountActivity.class));
+                SharedPreferencesHelper helper = new SharedPreferencesHelper(this);
+                helper.setUserReceiver(et_address_name.getText().toString());
+                helper.setUserReceiverPhone(et_address_tel.getText().toString());
+                helper.setUserReceiverArea(et_address_home.getText().toString());
+                helper.setUserReceiverAddress(et_address_detail.getText().toString());
+                Intent intent = new Intent(AddressActivity.this, AccountActivity.class);
+                setResult(0);
+                finish();
                 break;
             case R.id.iv_address_more://点击地址栏下拉按钮
 

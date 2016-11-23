@@ -3,33 +3,46 @@
     package="com.xpple.fruits">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name=".base.CustomApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".main.ui.MainActivity">
+
+        </activity>
+        <activity android:name=".main.ui.DiscoverActivity" />
+        <activity android:name=".cart.ui.AccountActivity" />
+        <activity android:name=".me.ui.UpdatePersonalActivity" />
+        <activity android:name=".order.ui.MyOrderActivity" />
+        <activity android:name=".me.ui.MyGetCoinActivity" />
+        <activity android:name=".me.ui.UpdateNicknameActivity" />
+        <activity android:name=".me.ui.AddressActivity" />
+        <activity android:name=".me.ui.UpdatePasswordActivity" />
+        <activity android:name=".me.ui.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main.ui.DiscoverActivity" />
-        <activity android:name=".cart.ui.AccountActivity" />
-        <activity android:name=".me.ui.UpdatePersonalActivity" />
-        <activity android:name=".me.ui.MyOrderActivity" />
-        <activity android:name=".me.ui.MyGetCoinActivity" />
-        <activity android:name=".me.ui.UpdateNicknameActivity" />
-        <activity android:name=".me.ui.AddressActivity" />
-        <activity android:name=".me.ui.UpdatePasswordActivity" />
-        <activity android:name=".me.ui.LoginActivity" />
-        <activity android:name=".me.ui.Register1Activity" />
-        <activity android:name=".me.ui.Register2Activity" />
-        <activity android:name=".shop.ui.SeedDetailActivity"></activity>
+        <activity android:name=".me.ui.RegisterActivity">
+
+        </activity>
+        <activity android:name=".shop.ui.SeedDetailActivity" />
         <activity android:name=".me.ui.InviteFriendActivity" />
         <activity android:name=".me.ui.AddOtherActivity" />
         <activity android:name=".shop.ui.BuySeedActivity" />
@@ -37,7 +50,7 @@
         <activity android:name=".orchard.ui.OrchardActivity" />
         <activity android:name=".orchard.ui.SeedCardActivity" />
         <activity android:name=".orchard.ui.FriendListActivity" />
-        <activity android:name=".main.ui.DiscoverDetailActivity"></activity>
+        <activity android:name=".main.ui.DiscoverDetailActivity" />
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -19,7 +20,8 @@
             android:id="@+id/iv_buy_seed_photo"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:background="@mipmap/fruit_detail_seed"/>
+            android:background="@mipmap/fruit_detail_seed" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,6 +81,7 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -138,105 +141,97 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/viewColor"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:paddingLeft="15dp"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingRight="15dp">
             <RadioGroup
+                android:id="@+id/rg_buy_seed_select"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-                    <RadioButton
-                        android:id="@+id/rb_buy_seed_zhifubao"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checked="true"/>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:layout_marginLeft="5dp">
 
-                        <ImageView
-                            android:layout_width="54dp"
-                            android:layout_height="54dp"
-                            android:src="@mipmap/account_zhifubao"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:text="支付宝"
-                            android:textSize="@dimen/textview_size"
-                            android:textColor="@color/color_text_black"/>
+                <RadioButton
+                    android:id="@+id/rb_buy_seed_zhifubao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"/>
 
-                    </LinearLayout>
-                </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
-                    <RadioButton
-                        android:id="@+id/rb_buy_seed_wechat"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                    <LinearLayout
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:src="@mipmap/account_zhifubao"/>
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:layout_marginLeft="5dp">
-                        <ImageView
-                            android:layout_width="54dp"
-                            android:layout_height="54dp"
-                            android:src="@mipmap/account_wechat"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:text="微信支付"
-                            android:textSize="@dimen/textview_size"
-                            android:textColor="@color/color_text_black"/>
-                    </LinearLayout>
+                        android:layout_marginTop="5dp"
+                        android:text="支付宝"
+                        android:textSize="@dimen/textview_size"
+                        android:textColor="@color/color_text_black"/>
+
                 </LinearLayout>
+                <RadioButton
+                    android:id="@+id/rb_buy_seed_wechat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
-                    <RadioButton
-                        android:id="@+id/rb_buy_seed_get_coin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                    <LinearLayout
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:src="@mipmap/account_wechat"/>
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:layout_marginLeft="5dp">
-                        <ImageView
-                            android:layout_width="54dp"
-                            android:layout_height="54dp"
-                            android:src="@mipmap/payinget_geticon"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:text="Get币"
-                            android:textSize="@dimen/textview_size"
-                            android:textColor="@color/color_text_black"/>
-                    </LinearLayout>
+                        android:layout_marginTop="5dp"
+                        android:text="微信支付"
+                        android:textSize="@dimen/textview_size"
+                        android:textColor="@color/color_text_black"/>
+                </LinearLayout>
+
+                <RadioButton
+                    android:id="@+id/rb_buy_seed_get_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:src="@mipmap/payinget_geticon"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Get币支付"
+                        android:textSize="@dimen/textview_size"
+                        android:textColor="@color/color_text_black"/>
                 </LinearLayout>
             </RadioGroup>
         </LinearLayout>
     </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

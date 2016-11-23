@@ -6,14 +6,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.jude.utils.JUtils;
 import com.xpple.fruits.R;
 import com.xpple.fruits.base.BaseActivity;
-import com.xpple.fruits.utils.StringUtil;
+import com.xpple.fruits.shop.model.bean.Seeds;
+import com.xpple.fruits.shop.presenter.SeedPresenter;
+import com.xpple.fruits.shop.presenter.SeedPresenterImpl;
+import com.xpple.fruits.shop.view.SeedDetailView;
 
-public class SeedDetailActivity extends BaseActivity implements View.OnClickListener {
+import java.text.DecimalFormat;
+
+public class SeedDetailActivity extends BaseActivity implements View.OnClickListener,SeedDetailView {
     private ImageButton ib_back;
     private TextView tv_title;
     private SimpleDraweeView iv_seed_detail_image;//水果图片
@@ -32,8 +39,15 @@ public class SeedDetailActivity extends BaseActivity implements View.OnClickList
     private ImageButton ib_seed_detail_add;
     private Button bt_seed_detail_confirm;
 
-    private String seedId;
+    private ProgressBar progressBar;
+
+    private DecimalFormat df   = new DecimalFormat("######0.0");
+
+    private int seedId;
     private int num = 1;
+    private Seeds seed;
+
+    private SeedPresenter presenter;
 
 
     @Override
@@ -41,25 +55,19 @@ public class SeedDetailActivity extends BaseActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seed_detail);
         initView();
+        presenter = new SeedPresenterImpl(this);
         initData();
-        setupView();
-    }
-
-    private void setupView() {
-        //测试图片地址
-        iv_seed_detail_image.setImageURI("http://b.hiphotos.baidu.com/image/h%3D200/sign=8e8564a10c46f21fd6345953c6256b31/00e93901213fb80e22a34b8d30d12f2eb938947d.jpg");
     }
 
     private void initData() {
         Intent intent = getIntent();
         if (intent != null)
         {
-            seedId = intent.getStringExtra("seedId");
+            seedId = intent.getIntExtra("seedId",0);
         }
-        if (StringUtil.isNotEmpty(seedId))
+        if (seedId != 0)
         {
-            //网络请求操作
-
+            presenter.getSeed(seedId);
         }
     }
 
@@ -86,6 +94,7 @@ public class SeedDetailActivity extends BaseActivity implements View.OnClickList
         tv_seed_detail_price=$(R.id.tv_seed_detail_price);
         tv_seed_detail_get_price=$(R.id.tv_seed_detail_get_price);
         tv_seed_detail_num=$(R.id.tv_seed_detail_num);
+        progressBar = new ProgressBar(this);
     }
 
     @Override
@@ -109,8 +118,52 @@ public class SeedDetailActivity extends BaseActivity implements View.OnClickList
                 }
                  break;
              case R.id.bt_seed_detail_confirm://点击确认购买
-
+                 if (seed == null)
+                 {
+                     JUtils.Toast("加载失败！");
+                     return;
+                 }
+                 Intent intent = new Intent(SeedDetailActivity.this,BuySeedActivity.class);
+                 Bundle bundle = new Bundle();
+                 seed.seed_num = Integer.parseInt(tv_seed_detail_num.getText().toString());
+                 bundle.putSerializable("seed",seed);
+                 intent.putExtra("seed",bundle);
+                 startActivity(intent);
                  break;
          }
+    }
+
+    @Override
+    public void showProgress() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideProgress() {
+        progressBar.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void LoadSuccess(Seeds seed) {
+        this.seed = seed;
+        iv_seed_detail_image.setImageURI(seed.getPicture());
+        tv_seed_detail_name.setText(seed.getName());
+        tv_seed_detail_inform.setText(seed.getIntroduce());
+        tv_seed_detail_condition.setText("花盆等级达到"+String.valueOf(seed.getNeedGrade()));
+        tv_seed_detail_value.setText("成长值"+seed.getTotalGrowth());
+        int days = seed.getTotalGrowth()/50;
+        tv_seed_detail_days.setText("约"+days+"天" );
+        tv_seed_detail_fruit.setText(seed.getExchangeMessage());
+        tv_seed_detail_price.setText(df.format(seed.getPrice()));
+        tv_seed_detail_get_price.setText(getCoin(seed.getPrice()));
+    }
+
+    private int getCoin(double price) {
+        return (int) price * 10;
+    }
+
+    @Override
+    public void LoadFail(String s) {
+        JUtils.Toast("数据加载失败啦！"+s);
     }
 }

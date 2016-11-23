@@ -80,7 +80,7 @@
                     android:textSize="@dimen/textview_size"
                     android:layout_marginRight="10dp"
                     android:textColor="@color/viewColor2"
-                    android:text="赵士诚"
+                    android:text="佳"
                     android:layout_gravity="center_vertical"/>
 
             </LinearLayout>
@@ -213,6 +213,7 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
             <RadioGroup
+                android:id="@+id/rg_account_paymentMethod"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
@@ -311,7 +312,7 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/textview_size"
             android:textColor="@color/account_other"
-            android:text="西瓜切成八块..."/>
+            android:text=""/>
         <LinearLayout
             android:id="@+id/ll_account_other"
             android:layout_width="match_parent"

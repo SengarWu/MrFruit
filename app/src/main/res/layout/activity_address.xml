@@ -29,8 +29,7 @@
                 android:src="@mipmap/account_people"/>
             <EditText
                 android:id="@+id/et_address_name"
-                android:singleLine="true"
-                android:layout_marginRight="20dp"
+                android:lines="1"                android:layout_marginRight="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="10dp"
@@ -56,8 +55,7 @@
                 android:src="@mipmap/telnumber"/>
             <EditText
                 android:id="@+id/et_address_tel"
-                android:singleLine="true"
-                android:layout_marginRight="20dp"
+                android:lines="1"                android:layout_marginRight="20dp"
                 android:background="@color/transpant"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -85,7 +83,7 @@
             <EditText
                 android:id="@+id/et_address_home"
                 android:ellipsize="end"
-                android:singleLine="true"
+                android:lines="1"
                 android:layout_centerVertical="true"
                 android:background="@color/transpant"
                 android:layout_width="match_parent"
@@ -122,8 +120,7 @@
             <EditText
                 android:id="@+id/et_address_detail"
                 android:ellipsize="end"
-                android:singleLine="true"
-                android:layout_marginRight="20dp"
+                android:lines="1"                android:layout_marginRight="20dp"
                 android:background="@color/transpant"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"

@@ -8,7 +8,7 @@ public interface LoginView {
 
     void hideProgress();
 
-    void loginFail();
+    void loginFail(String s);
 
     void loginSuccess();
 }

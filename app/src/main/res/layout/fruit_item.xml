@@ -8,35 +8,44 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:background="@color/base_color_text_white">
 
-        <com.facebook.drawee.view.SimpleDraweeView
-            android:id="@+id/iv_fruit_pic"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@mipmap/seeds_banana2"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/iv_fruit_pic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/seeds_banana2" />
+
+        </LinearLayout>
+
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_marginLeft="10dp">
+            android:layout_marginLeft="10dp"
+            android:layout_weight="2">
 
             <TextView
                 android:id="@+id/tv_fruit_name"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/textSize_textView"
                 android:text="香蕉"/>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:gravity="bottom">
@@ -121,15 +130,16 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
+            android:layout_weight="1"
             android:gravity="bottom|right">
 
             <ImageButton
                 android:id="@+id/ib_fruit_sub"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
                 android:layout_marginRight="10dp"
                 android:background="@mipmap/payinget_jian"
                 android:visibility="gone"/>
@@ -137,16 +147,17 @@
                 android:id="@+id/tv_fruit_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="1dp"
                 android:textColor="@color/content"
+                android:text="1"
                 android:visibility="gone"/>
 
             <ImageButton
                 android:id="@+id/ib_fruit_add"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
                 android:background="@mipmap/payinget_add"/>
 
         </LinearLayout>

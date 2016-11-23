@@ -11,27 +11,33 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemChildClickListener;
+import com.jude.utils.JUtils;
 import com.xpple.fruits.R;
 import com.xpple.fruits.base.BaseFragment;
-import com.xpple.fruits.bean.FruitEntity;
+import com.xpple.fruits.main.model.bean.Fruit;
 import com.xpple.fruits.shop.adapter.FruitAdapter;
+import com.xpple.fruits.shop.model.bean.FruitResult;
+import com.xpple.fruits.shop.presenter.FruitPresenter;
+import com.xpple.fruits.shop.presenter.FruitPresenterImpl;
+import com.xpple.fruits.shop.view.FruitView;
+import com.xpple.fruits.utils.SharedPreferencesHelper;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.List;
 
-public class FruitFragment extends BaseFragment implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
+public class FruitFragment extends BaseFragment implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener, FruitView, BaseQuickAdapter.RequestLoadMoreListener {
 
     private View parentView;
 
     private DecimalFormat df   = new DecimalFormat("######0.0");
-    private static double total = 0;
 
     private FruitAdapter adapter;
-    private List<FruitEntity> fruits;
+    private List<Fruit> fruits;
 
     private RecyclerView rv_shop;
     private ImageButton ib_shop_cart;
@@ -39,6 +45,15 @@ public class FruitFragment extends BaseFragment implements View.OnClickListener,
     private TextView tv_shop_total;
     private Button btn_shop_settle;
     private SwipeRefreshLayout srl_fruit;
+    private ProgressBar progressBar;
+    FruitPresenter presenter;
+
+    private int userId = 0;
+    private int areaId = 0;
+    private int index = 1;
+    private final int SIZE = 20;
+    private Double cost = 0.0;
+    private int dataCount = 0;
 
     private final int REFRESH_DELAY = 1001;
     private Handler handler = new Handler(){
@@ -48,7 +63,6 @@ public class FruitFragment extends BaseFragment implements View.OnClickListener,
             {
                 case REFRESH_DELAY:
                     initData();
-                    setupView();
                     srl_fruit.setRefreshing(false);
                     break;
             }
@@ -61,10 +75,9 @@ public class FruitFragment extends BaseFragment implements View.OnClickListener,
         // Inflate the layout for this fragment
         parentView = inflater.inflate(R.layout.fragment_fruit, container, false);
         initView();
+        presenter = new FruitPresenterImpl(this);
         initData();
-        setupView();
         return parentView;
-
     }
 
     private void initView() {
@@ -79,6 +92,7 @@ public class FruitFragment extends BaseFragment implements View.OnClickListener,
         srl_fruit = (SwipeRefreshLayout) parentView.findViewById(R.id.srl_fruit);
         srl_fruit.setColorSchemeResources(R.color.base_color_yellow,R.color.base_color_brown);
         srl_fruit.setOnRefreshListener(this);
+        progressBar = new ProgressBar(getActivity());
     }
 
     private void setupView() {
@@ -86,30 +100,30 @@ public class FruitFragment extends BaseFragment implements View.OnClickListener,
         //设置动画效果
         adapter.openLoadAnimation();
         //加载更多
-        adapter.openLoadMore(20,true);
+        adapter.setOnLoadMoreListener(this);
+        adapter.openLoadMore(20);
         rv_shop.setAdapter(adapter);
-        //回调子控件点击事件
-        adapter.setOnRecyclerViewItemChildClickListener(new BaseQuickAdapter.OnRecyclerViewItemChildClickListener() {
+        rv_shop.addOnItemTouchListener(new OnItemChildClickListener() {
             @Override
-            public void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
-                FruitEntity fruit = (FruitEntity) baseQuickAdapter.getItem(position);
+            public void SimpleOnItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
+                Fruit fruit = (Fruit) baseQuickAdapter.getItem(position);
                 switch (view.getId())
                 {
                     case R.id.ib_fruit_sub:
-                        if (fruit.fruit_num < 2)
+                        if (fruit.num < 2)
                         {
-                            fruit.visible = false;
+                            fruit.setVisible(false);
                         }
                         else
                         {
-                            fruit.fruit_num--;
+                            fruit.num--;
                         }
                         break;
                     case R.id.ib_fruit_add:
-                        if (fruit.fruit_num >= 0)
+                        if (fruit.num >= 0)
                         {
                             fruit.visible = true;
-                            fruit.fruit_num++;
+                            fruit.num++;
                         }
                         break;
                     default:
@@ -118,34 +132,98 @@ public class FruitFragment extends BaseFragment implements View.OnClickListener,
                 adapter.notifyDataSetChanged();
             }
         });
+
+        if (cost == 0)
+        {
+            tv_shop_message.setVisibility(View.VISIBLE);
+            tv_shop_total.setVisibility(View.GONE);
+        }
+        else
+        {
+            tv_shop_message.setVisibility(View.GONE);
+            tv_shop_total.setVisibility(View.VISIBLE);
+        }
+
+
     }
 
     private void initData() {
-        if (fruits != null)
-        {
-            fruits.clear();
-        }
-        fruits = new ArrayList<FruitEntity>();
-        for (int i = 0; i < 20; i++) {
-            FruitEntity fruit = new FruitEntity();
-            fruit.fruit_name = "柠檬";
-            fruit.fruit_price = 10.0;
-            fruit.fruit_discount = 8.0;
-            fruit.fruit_unit = "个";
-            fruit.fruit_num = 0;
-            fruit.visible = false;
-            fruits.add(fruit);
-        }
+        //获取本地数据
+        SharedPreferencesHelper helper = new SharedPreferencesHelper(getActivity());
+        userId = helper.getUserId();
+        areaId = helper.getUserAreaId();
+        //首次网络请求
+        presenter.loadData(userId,areaId,index,SIZE);
     }
 
 
     @Override
     public void onClick(View view) {
+        switch (view.getId())
+        {
+            case R.id.ib_shop_cart:
+                //弹出购物车清单
 
+                break;
+            case R.id.btn_shop_settle:
+                //结算
+
+                break;
+        }
     }
 
     @Override
     public void onRefresh() {
-        handler.sendEmptyMessageDelayed(REFRESH_DELAY,1000);
+        handler.sendEmptyMessageDelayed(REFRESH_DELAY,500);
+    }
+
+    @Override
+    public void showProgress() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideProgress() {
+        progressBar.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void LoadSuccess(FruitResult result) {
+        if (index == 0 || index == 1)
+        {
+            //首次请求
+            fruits = result.getFruits();
+            cost = result.getCost();
+            dataCount = result.getDataCount();
+            setupView();
+        }
+        else
+        {
+            adapter.addData(result.getFruits());
+        }
+    }
+
+    @Override
+    public void LoadFail(String s) {
+        JUtils.Toast("数据加载失败"+s);
+    }
+
+    @Override
+    public void onLoadMoreRequested() {
+        rv_shop.post(new Runnable() {
+            @Override
+            public void run() {
+                if (adapter.getData().size() >= dataCount)
+                {
+                    //加载完毕
+                    adapter.loadComplete();
+                }
+                else
+                {
+                    index++;
+                    presenter.loadData(userId,areaId,index,SIZE);
+                }
+            }
+        });
     }
 }

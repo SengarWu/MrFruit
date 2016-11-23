@@ -8,7 +8,8 @@ public interface RegisterView {
 
     void hideProgress();
 
-    void registerSuccess();
+    void registerSuccess(String message);
 
-    void registerFail();
+    void registerFail(String message);
+
 }

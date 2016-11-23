@@ -39,7 +39,10 @@ public class AddOtherActivity extends BaseActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.tv_add_other_finish://点击完成
-                startActivity(new Intent(AddOtherActivity.this,AccountActivity.class));
+                Intent intent = new Intent(AddOtherActivity.this,AccountActivity.class);
+                intent.putExtra("remarks",et_add_other_content.getText().toString());
+                setResult(1,intent);
+                finish();
                 break;
         }
     }
